@@ -1,0 +1,131 @@
+<html lang="ro">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Returnări și Reclamații — Victoria's Secret</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style/style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="js/cart.service.js"></script>
+    <script src="js/auth.service.js"></script>
+  </head>
+  <body class="bg-white">
+    <header>
+      <div class="bg-[#f9e2e7] py-2 w-full text-center">
+        <p class="font-extralight text-xs sm:text-sm">SITE-UL OFICIAL VICTORIA'S SECRET — LIVRARE GRATUITĂ DE LA 269 LEI</p>
+      </div>
+      <div class="w-full bg-[#eee9ea] py-2">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+          <nav class="flex gap-4 items-center">
+            <li class="list-none border-r-2 border-gray-400 pr-6 text-xs sm:text-sm font-light"><a href="index.html" class="hover:font-semibold">VICTORIA'S SECRET</a></li>
+            <li class="list-none border-r-2 border-gray-400 pr-6 text-xs sm:text-sm font-light"><a href="pink.html" class="hover:font-semibold">PINK</a></li>
+            <li class="list-none text-xs sm:text-sm font-light"><a href="vs-beauty.html" class="hover:font-semibold">BEAUTY</a></li>
+          </nav>
+          <div class="flex gap-4 items-center">
+            <a href="login.html" id="user-nav-link" title="Contul meu"><i id="user-nav-icon" class="fa-regular fa-user text-xl sm:text-2xl cursor-pointer"></i></a>
+            <a href="cos-de-cumparaturi.html" class="relative">
+              <i class="fa-solid fa-bag-shopping text-xl sm:text-2xl cursor-pointer"></i>
+              <span class="cart-badge absolute -top-2 -right-2 bg-[#c37989] text-white text-[10px] rounded-full w-4 h-4 font-bold" style="display:none;align-items:center;justify-content:center">0</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-12 max-w-4xl">
+      <h1 class="text-2xl sm:text-3xl font-light mb-2">RETURNĂRI ȘI RECLAMAȚII</h1>
+      <p class="text-gray-500 text-sm mb-10">Returnarea este simplă și gratuită. Ai la dispoziție 30 de zile.</p>
+
+      <!-- Steps -->
+      <section class="mb-12">
+        <h2 class="text-lg font-semibold mb-6">Cum returnezi un produs?</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-4 gap-4">
+          <div class="flex flex-col items-center text-center gap-3">
+            <div class="w-12 h-12 rounded-full bg-[#f9e2e7] flex items-center justify-center text-[#c37989] font-bold text-lg">1</div>
+            <h3 class="font-semibold text-sm">Inițiază returul</h3>
+            <p class="text-xs text-gray-500">Accesează <a href="contul-meu.html" class="text-[#c37989] hover:underline">Contul meu</a> sau contactează-ne la <a href="contact.html" class="text-[#c37989] hover:underline">suport</a>.</p>
+          </div>
+          <div class="flex flex-col items-center text-center gap-3">
+            <div class="w-12 h-12 rounded-full bg-[#f9e2e7] flex items-center justify-center text-[#c37989] font-bold text-lg">2</div>
+            <h3 class="font-semibold text-sm">Împachetează produsul</h3>
+            <p class="text-xs text-gray-500">Ambalează produsul cu etichetele intacte în ambalajul original sau altul securizat.</p>
+          </div>
+          <div class="flex flex-col items-center text-center gap-3">
+            <div class="w-12 h-12 rounded-full bg-[#f9e2e7] flex items-center justify-center text-[#c37989] font-bold text-lg">3</div>
+            <h3 class="font-semibold text-sm">Predă coletul</h3>
+            <p class="text-xs text-gray-500">Predă coletul la cel mai apropiat punct de colectare sau solicită ridicare la domiciliu.</p>
+          </div>
+          <div class="flex flex-col items-center text-center gap-3">
+            <div class="w-12 h-12 rounded-full bg-[#f9e2e7] flex items-center justify-center text-[#c37989] font-bold text-lg">4</div>
+            <h3 class="font-semibold text-sm">Primești rambursarea</h3>
+            <p class="text-xs text-gray-500">Rambursarea se efectuează în 5–10 zile lucrătoare după recepția produsului.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Conditions -->
+      <section class="mb-12">
+        <h2 class="text-lg font-semibold mb-4">Condiții de retur</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm">
+          <div>
+            <h3 class="font-medium mb-3 flex items-center gap-2 text-green-600"><i class="fa-solid fa-circle-check"></i> Se acceptă la retur</h3>
+            <ul class="flex flex-col gap-2 text-gray-600">
+              <li class="flex items-start gap-2"><i class="fa-solid fa-check text-green-500 text-xs mt-1"></i>Produse neutilizate, cu etichetele intacte</li>
+              <li class="flex items-start gap-2"><i class="fa-solid fa-check text-green-500 text-xs mt-1"></i>Returnate în termen de 30 de zile de la livrare</li>
+              <li class="flex items-start gap-2"><i class="fa-solid fa-check text-green-500 text-xs mt-1"></i>Ambalaj original sau echivalent</li>
+              <li class="flex items-start gap-2"><i class="fa-solid fa-check text-green-500 text-xs mt-1"></i>Produse defecte sau diferite față de comandă — în orice stare</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-medium mb-3 flex items-center gap-2 text-red-500"><i class="fa-solid fa-circle-xmark"></i> Nu se acceptă la retur</h3>
+            <ul class="flex flex-col gap-2 text-gray-600">
+              <li class="flex items-start gap-2"><i class="fa-solid fa-xmark text-red-400 text-xs mt-1"></i>Produse purtate, spălate sau modificate</li>
+              <li class="flex items-start gap-2"><i class="fa-solid fa-xmark text-red-400 text-xs mt-1"></i>Lenjerie intimă (din motive igienice), dacă sigiliul protector a fost îndepărtat</li>
+              <li class="flex items-start gap-2"><i class="fa-solid fa-xmark text-red-400 text-xs mt-1"></i>Produse returnate după 30 de zile</li>
+              <li class="flex items-start gap-2"><i class="fa-solid fa-xmark text-red-400 text-xs mt-1"></i>Produse personalizate sau comanda specială</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Refund -->
+      <section class="mb-12">
+        <h2 class="text-lg font-semibold mb-4">Rambursarea</h2>
+        <p class="text-sm text-gray-600 mb-4">Rambursarea se face prin aceeași metodă de plată folosită la comandă, în termen de 5–10 zile lucrătoare de la recepția și verificarea produsului returnat.</p>
+        <div class="overflow-x-auto">
+          <table class="w-full text-xs border-collapse">
+            <thead><tr class="bg-gray-50"><th class="border border-gray-200 px-3 py-2 text-left font-semibold">Metodă de plată</th><th class="border border-gray-200 px-3 py-2 text-left font-semibold">Termen rambursare</th></tr></thead>
+            <tbody>
+              <tr><td class="border border-gray-200 px-3 py-2">Card bancar</td><td class="border border-gray-200 px-3 py-2">5–10 zile lucrătoare</td></tr>
+              <tr><td class="border border-gray-200 px-3 py-2">PayPal</td><td class="border border-gray-200 px-3 py-2">3–5 zile lucrătoare</td></tr>
+              <tr><td class="border border-gray-200 px-3 py-2">Ramburs (numerar)</td><td class="border border-gray-200 px-3 py-2">Transfer bancar în 7–10 zile</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Complaint -->
+      <section>
+        <h2 class="text-lg font-semibold mb-4">Reclamații</h2>
+        <p class="text-sm text-gray-600 mb-4">Ai primit un produs defect sau diferit față de cel comandat? Contactează-ne în termen de 48 de ore de la livrare la <a href="mailto:suport@victoriassecret.ro" class="text-[#c37989] hover:underline">suport@victoriassecret.ro</a> cu fotografii ale produsului și numărul comenzii. Vom rezolva situația rapid.</p>
+        <a href="contact.html" class="inline-block bg-black text-white text-sm px-8 py-3 hover:bg-gray-800 transition tracking-wider">CONTACTEAZĂ SUPORTUL</a>
+      </section>
+    </main>
+
+    <footer class="bg-gray-100 w-full mt-14">
+      <div class="container mx-auto flex flex-col lg:flex-row gap-10 lg:gap-[150px] px-4 pt-10 pb-10">
+        <div class="flex flex-col w-full lg:max-w-[500px]">
+          <p class="text-lg font-semibold pb-4">ABONEAZĂ-TE LA NEWSLETTER</p>
+          <form class="newsletter-form flex flex-col gap-0">
+            <input class="bg-white py-3 px-3 border border-gray-200" placeholder="Introdu adresa de email" type="email" />
+            <button type="submit" class="bg-black text-white text-xs py-3 px-6 hover:bg-gray-800 transition mt-2 tracking-wider w-full">ABONEAZĂ-TE</button>
+            <p class="newsletter-msg text-xs mt-2"></p>
+          </form>
+          <span class="pt-5 pb-10 text-sm">Prin abonare ești de acord cu <a class="text-[#c37989]" href="politica-de-confidentialitate.html">politica noastră de confidențialitate.</a></span>
+        </div>
+        <div class="w-full pb-10"><nav class="grid grid-cols-1 sm:grid-cols-3 gap-8"><ul class="flex flex-col gap-4 text-sm"><li class="font-semibold">AJUTOR</li><li><a href="faq.html" class="hover:text-[#af5071]">FAQ</a></li><li><a href="contact.html" class="hover:text-[#af5071]">Contactează-ne</a></li></ul><ul class="flex flex-col gap-4 text-sm"><li class="font-semibold">INFORMAȚII</li><li><a href="livrare-plata.html" class="hover:text-[#af5071]">Livrare și plată</a></li><li><a href="returnari.html" class="hover:text-[#af5071]">Returnări</a></li></ul><ul class="flex flex-col gap-4 text-sm"><li class="font-semibold">ASISTENȚĂ</li><li><a href="contul-meu.html" class="hover:text-[#af5071]">Contul meu</a></li><li><a href="termeni-conditii.html" class="hover:text-[#af5071]">Termeni</a></li></ul></nav></div>
+      </div>
+    </footer>
+    <div class="w-full py-5 border-t border-gray-200"><div class="container mx-auto px-4"><span class="text-sm text-gray-500">© 2024 Victoria's Secret. All Rights Reserved.</span></div></div>
+  </body>
+</html>

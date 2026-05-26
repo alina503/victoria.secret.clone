@@ -1,0 +1,120 @@
+/* ─── Navigation ─────────────────────────────────────────────────────────── */
+.nav-active {
+  border-bottom: 2px solid var(--color-black);
+  font-weight: 600;
+}
+
+/* ─── Mobile Menu ────────────────────────────────────────────────────────── */
+#mobile-menu {
+  display: none;
+}
+
+#mobile-menu.open {
+  display: block;
+}
+
+/* ─── Size Buttons ───────────────────────────────────────────────────────── */
+.size-btn {
+  border: 1px solid var(--color-gray-300);
+  font-size: var(--font-size-xs);
+  padding: 0.25rem 0.5rem;
+  transition: border-color var(--transition-fast);
+  cursor: pointer;
+  background: var(--color-white);
+}
+
+.size-btn:hover {
+  border-color: var(--color-black);
+}
+
+.size-btn.selected {
+  background: var(--color-black);
+  color: var(--color-white);
+  border-color: var(--color-black);
+}
+
+/* ─── Product Card ───────────────────────────────────────────────────────── */
+.product-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card img {
+  cursor: pointer;
+  transition: opacity var(--transition-base);
+}
+
+.product-card img:hover {
+  opacity: 0.9;
+}
+
+.add-to-cart {
+  background: var(--color-black);
+  color: var(--color-white);
+  font-size: var(--font-size-xs);
+  padding: 0.5rem;
+  width: 100%;
+  text-align: center;
+  transition: background-color var(--transition-fast);
+  letter-spacing: 0.05em;
+}
+
+.add-to-cart:hover {
+  background: var(--color-gray-700);
+}
+
+/* ─── Cart Badge ─────────────────────────────────────────────────────────── */
+.cart-badge {
+  position: absolute;
+  top: -0.5rem;
+  right: -0.5rem;
+  background: var(--color-brand-primary);
+  color: var(--color-white);
+  font-size: 0.625rem;
+  font-weight: 700;
+  border-radius: 9999px;
+  width: 1rem;
+  height: 1rem;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ─── Search Overlay ─────────────────────────────────────────────────────── */
+#search-overlay {
+  display: none;
+}
+
+/* ─── Toast ──────────────────────────────────────────────────────────────── */
+#toast {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-black);
+  color: var(--color-white);
+  font-size: var(--font-size-sm);
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.25rem;
+  z-index: var(--z-toast);
+  display: none;
+  align-items: center;
+  gap: 0.75rem;
+  white-space: nowrap;
+}
+
+/* ─── Qty Buttons (Cart) ─────────────────────────────────────────────────── */
+.qty-btn:hover {
+  background-color: var(--color-black);
+  color: var(--color-white);
+}
+
+/* ─── Popup Modal ────────────────────────────────────────────────────────── */
+#product-popup {
+  display: none;
+}
+
+/* ─── Newsletter Popup ───────────────────────────────────────────────────── */
+#newsletter-popup {
+  display: flex;
+}

@@ -1,0 +1,268 @@
+﻿<html lang="ro">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Conectare — Victoria's Secret</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style/style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-white">
+    <header>
+      <div class="bg-[#f9e2e7] py-2 w-full">
+        <div class="font-extralight text-xs sm:text-sm mx-auto flex flex-col sm:flex-row justify-center items-center gap-2 sm:gap-4 text-center px-4">
+          <p>SITE-UL OFICIAL VICTORIA'S SECRET LIVRARE GRATUITĂ DE LA 269 LEI</p>
+          <a class="text-xs sm:text-sm bg-transparent hover:bg-[#e8e3e4] border-black border px-3 py-[3px] rounded-sm whitespace-nowrap" href="#">VEZI OFERTELE</a>
+        </div>
+      </div>
+      <div class="w-full bg-[#eee9ea] py-2">
+        <div class="container mx-auto px-4">
+          <div class="flex justify-between items-center">
+            <nav class="flex flex-wrap gap-2 sm:gap-4 items-center">
+              <li class="list-none border-r-2 border-gray-400 pr-2 sm:pr-6 text-xs sm:text-sm font-light"><a href="index.html" class="hover:font-semibold">VICTORIA'S SECRET</a></li>
+              <li class="list-none border-r-2 border-gray-400 pr-2 sm:pr-6 text-xs sm:text-sm font-light"><a href="pink.html" class="hover:font-semibold">PINK</a></li>
+              <li class="list-none text-xs sm:text-sm font-light"><a href="vs-beauty.html" class="hover:font-semibold">BEAUTY</a></li>
+            </nav>
+            <div class="flex gap-4 items-center">
+              <button aria-label="Meniu" id="hamburger" class="sm:hidden text-xl"><i class="fa-solid fa-bars"></i></button>
+              <button id="search-toggle" aria-label="Căutare" title="Căutare"><i class="fa-solid fa-magnifying-glass text-xl sm:text-2xl cursor-pointer"></i></button>
+              <a href="login.html" id="user-nav-link" title="Contul meu"><i id="user-nav-icon" class="fa-regular fa-user text-xl sm:text-2xl cursor-pointer"></i></a>
+              <a href="cos-de-cumparaturi.html" title="Coș de cumpărături" class="relative">
+                <i class="fa-solid fa-bag-shopping text-xl sm:text-2xl cursor-pointer"></i>
+                <span class="cart-badge absolute -top-2 -right-2 bg-[#c37989] text-white text-[10px] rounded-full w-4 h-4 font-bold" style="display:none;align-items:center;justify-content:center">0</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="w-full border-b border-gray-200 hidden sm:block">
+        <div class="container mx-auto px-4">
+          <nav><ul class="flex justify-between text-sm font-light py-3">
+            <li><a href="nou.html" class="hover:nav-active px-1 py-2">NOU</a></li>
+            <li><a href="sutiene.html" class="hover:nav-active px-1 py-2">SUTIENE</a></li>
+            <li><a href="chiloti.html" class="hover:nav-active px-1 py-2">CHILOȚI</a></li>
+            <li><a href="lenjerie.html" class="hover:nav-active px-1 py-2">LENJERIE</a></li>
+            <li><a href="pijama.html" class="hover:nav-active px-1 py-2">PIJAMA</a></li>
+            <li><a href="haine-sport.html" class="hover:nav-active px-1 py-2">HAINE SPORT</a></li>
+            <li><a href="vs-beauty.html" class="hover:nav-active px-1 py-2">BEAUTY</a></li>
+            <li><a href="accesorii.html" class="hover:nav-active px-1 py-2">ACCESORII</a></li>
+            <li><a href="swim.html" class="hover:nav-active px-1 py-2">SWIM</a></li>
+            <li><a href="vs-now.html" class="hover:nav-active px-1 py-2">VS NOW</a></li>
+          </ul></nav>
+        </div>
+      </div>
+      <div id="mobile-menu" class="sm:hidden bg-white border-b border-gray-200 shadow-md">
+        <nav><ul class="flex flex-col text-sm font-light divide-y divide-gray-100">
+          <li><a href="nou.html" class="block px-6 py-3 hover:bg-gray-50">NOU</a></li>
+          <li><a href="sutiene.html" class="block px-6 py-3 hover:bg-gray-50">SUTIENE</a></li>
+          <li><a href="chiloti.html" class="block px-6 py-3 hover:bg-gray-50">CHILOȚI</a></li>
+          <li><a href="lenjerie.html" class="block px-6 py-3 hover:bg-gray-50">LENJERIE</a></li>
+          <li><a href="pijama.html" class="block px-6 py-3 hover:bg-gray-50">PIJAMA</a></li>
+          <li><a href="haine-sport.html" class="block px-6 py-3 hover:bg-gray-50">HAINE SPORT</a></li>
+          <li><a href="vs-beauty.html" class="block px-6 py-3 hover:bg-gray-50">BEAUTY</a></li>
+          <li><a href="accesorii.html" class="block px-6 py-3 hover:bg-gray-50">ACCESORII</a></li>
+          <li><a href="swim.html" class="block px-6 py-3 hover:bg-gray-50">SWIM</a></li>
+          <li><a href="vs-now.html" class="block px-6 py-3 hover:bg-gray-50">VS NOW</a></li>
+        </ul></nav>
+      </div>
+    </header>
+    <!-- Search overlay -->
+    <div id="search-overlay" style="display:none" class="fixed inset-0 z-50 flex-col items-center justify-start bg-white pt-20 px-4">
+      <div class="w-full max-w-2xl mx-auto">
+        <div class="flex items-center border-b-2 border-black pb-2 mb-6">
+          <i class="fa-solid fa-magnifying-glass text-gray-400 mr-3"></i>
+          <input id="search-input" type="text" placeholder="Cauta produse..." class="flex-1 text-lg outline-none" autocomplete="off" />
+          <button id="search-close" class="ml-4 text-2xl text-gray-400 hover:text-black">&times;</button>
+        </div>
+        <div id="search-results" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4"></div>
+        <p id="search-empty" class="text-gray-500 text-center mt-8" style="display:none">Niciun produs gasit.</p>
+      </div>
+    </div>
+
+    <main class="w-full">
+      <div class="min-h-[80vh] flex items-center justify-center px-4 py-16">
+        <div class="w-full max-w-sm">
+
+          <!-- Logo & title -->
+          <div class="text-center mb-8">
+            <a href="index.html" class="font-serif text-3xl sm:text-4xl font-bold tracking-widest">VICTORIA'S SECRET</a>
+            <h1 class="text-xl sm:text-2xl font-light mt-5 mb-1">Bun venit înapoi</h1>
+            <p class="text-sm text-gray-500">Conectează-te la contul tău</p>
+          </div>
+
+          <!-- Login form -->
+          <form id="login-form" class="flex flex-col gap-4" novalidate>
+
+            <div>
+              <label class="text-xs text-gray-600 block mb-1">Adresă de e-mail <span class="text-red-400">*</span></label>
+              <input id="email" type="email" autocomplete="email"
+                class="w-full border border-gray-300 px-3 py-2 text-sm transition" />
+              <p id="email-error" class="text-red-400 text-xs mt-1 hidden">Introduceți un e-mail valid.</p>
+            </div>
+
+            <div>
+              <div class="flex justify-between items-center mb-1">
+                <label class="text-xs text-gray-600">Parolă <span class="text-red-400">*</span></label>
+                <a href="parola-uitata.html" class="text-xs text-[#c37989] hover:text-[#af5071] underline">Ai uitat parola?</a>
+              </div>
+              <div class="relative">
+                <input id="password" type="password" autocomplete="current-password"
+                  class="w-full border border-gray-300 px-3 py-2 text-sm pr-10 transition" />
+                <button type="button" id="toggle-pwd" class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-700 text-sm">
+                  <i class="fa-regular fa-eye"></i>
+                </button>
+              </div>
+              <p id="password-error" class="text-red-400 text-xs mt-1 hidden">Câmp obligatoriu.</p>
+            </div>
+
+            <p id="login-error" class="text-red-400 text-xs text-center hidden">E-mail sau parolă incorectă.</p>
+
+            <button type="submit"
+              class="bg-black text-white text-sm py-3 hover:bg-gray-800 transition mt-1 tracking-wider">
+              CONECTEAZĂ-TE
+            </button>
+
+            <!-- Divider -->
+            <div class="flex items-center gap-3 my-1">
+              <div class="flex-1 h-px bg-gray-200"></div>
+              <span class="text-xs text-gray-400">SAU</span>
+              <div class="flex-1 h-px bg-gray-200"></div>
+            </div>
+
+            <!-- Social login -->
+            <div id="social-msg" class="text-xs text-center text-gray-400 hidden">Autentificarea socială va fi disponibilă în curând.</div>
+            <button type="button" id="btn-google"
+              class="flex items-center justify-center gap-3 border border-gray-300 py-2 text-sm hover:bg-gray-50 transition opacity-60 cursor-not-allowed">
+              <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google" class="w-5 h-5" />
+              Continuă cu Google
+            </button>
+            <button type="button" id="btn-facebook"
+              class="flex items-center justify-center gap-3 border border-gray-300 py-2 text-sm hover:bg-gray-50 transition opacity-60 cursor-not-allowed">
+              <i class="fa-brands fa-facebook text-[#1877F2] text-lg"></i>
+              Continuă cu Facebook
+            </button>
+
+            <p class="text-center text-xs text-gray-500 mt-2">
+              Nu ai cont?
+              <a href="inregistrare.html" class="text-[#c37989] underline hover:text-[#af5071]">Creează unul acum</a>
+            </p>
+
+          </form>
+
+          <!-- Success state -->
+          <div id="login-success" class="hidden text-center py-10">
+            <i class="fa-solid fa-circle-check text-4xl text-[#c37989] mb-4 block"></i>
+            <h2 class="text-xl font-light mb-2">Te-ai conectat cu succes!</h2>
+            <p class="text-sm text-gray-500 mb-6">Bun venit înapoi în familia Victoria's Secret.</p>
+            <a href="index.html" class="bg-black text-white text-sm px-8 py-3 hover:bg-gray-800 transition">MERGI LA HOMEPAGE</a>
+          </div>
+
+        </div>
+      </div>
+    </main>
+
+    <footer class="bg-gray-100 w-full mt-10">
+      <div class="container mx-auto flex flex-col lg:flex-row gap-10 lg:gap-[150px] px-4 pt-10 pb-10">
+        <div class="flex flex-col w-full lg:max-w-[500px]">
+          <p class="text-lg font-semibold pb-4">ABONEAZĂ-TE LA NEWSLETTER</p>
+          <form class="newsletter-form flex flex-col gap-0">
+            <input class="bg-white py-3 px-3 border border-gray-200" placeholder="Introdu adresa de email" type="email" />
+            <button type="submit" class="bg-black text-white text-xs py-3 px-6 hover:bg-gray-800 transition mt-2 tracking-wider w-full">ABONEAZĂ-TE</button>
+            <p class="newsletter-msg text-xs mt-2"></p>
+          </form>
+          <span class="pt-5 pb-10 text-sm">Prin abonare ești de acord cu <a class="text-[#c37989]" href="politica-de-confidentialitate.html">politica noastră de confidențialitate.</a></span>
+          <img class="w-full max-w-[400px] pb-7" src="assets/icon/VSFA_220818_-_ANPC_Buttons_1.avif" alt="ANPC" />
+          <img class="w-full max-w-[400px] pb-11" src="assets/icon/VSFA_220818_-_ANPC_Buttons_2.avif" alt="ANPC" />
+        </div>
+        <div class="w-full pb-10"><nav class="grid grid-cols-1 sm:grid-cols-3 gap-8"><ul class="flex flex-col gap-4 text-sm"><li class="font-semibold">AJUTOR</li><li><a href="faq.html" class="hover:text-[#af5071]">FAQ</a></li><li><a href="contact.html" class="hover:text-[#af5071]">Contactează-ne</a></li></ul><ul class="flex flex-col gap-4 text-sm"><li class="font-semibold">INFORMAȚII</li><li><a href="livrare-plata.html" class="hover:text-[#af5071]">Livrare și plată</a></li><li><a href="returnari.html" class="hover:text-[#af5071]">Returnări</a></li></ul><ul class="flex flex-col gap-4 text-sm"><li class="font-semibold">ASISTENȚĂ</li><li><a href="contul-meu.html" class="hover:text-[#af5071]">Contul meu</a></li><li><a href="termeni-conditii.html" class="hover:text-[#af5071]">Termeni</a></li></ul></nav></div>
+      </div>
+    </footer>
+    <div class="w-full py-5 border-t border-gray-200"><div class="container mx-auto px-4"><span class="text-sm text-gray-500">© 2024 Victoria's Secret. All Rights Reserved.</span></div></div>
+
+    <script src="js/cart.service.js"></script>
+    <script src="js/auth.service.js"></script>
+    <script>
+      // Redirect if already logged in
+      if (AuthService.isLoggedIn()) {
+        var session = AuthService.getSession();
+        document.getElementById('login-form').classList.add('hidden');
+        document.getElementById('login-success').classList.remove('hidden');
+        document.querySelector('#login-success h2').textContent = 'Bun venit, ' + session.firstName + '!';
+      }
+
+      document.getElementById('hamburger').addEventListener('click', function () {
+        document.getElementById('mobile-menu').classList.toggle('open');
+      });
+
+      document.getElementById('toggle-pwd').addEventListener('click', function () {
+        var pwd = document.getElementById('password');
+        var icon = this.querySelector('i');
+        if (pwd.type === 'password') {
+          pwd.type = 'text';
+          icon.classList.replace('fa-eye', 'fa-eye-slash');
+        } else {
+          pwd.type = 'password';
+          icon.classList.replace('fa-eye-slash', 'fa-eye');
+        }
+      });
+
+      ['email', 'password'].forEach(function (id) {
+        document.getElementById(id).addEventListener('input', function () {
+          this.classList.remove('border-red-400');
+          document.getElementById(id + '-error').classList.add('hidden');
+          document.getElementById('login-error').classList.add('hidden');
+        });
+      });
+
+      document.getElementById('login-form').addEventListener('submit', function (e) {
+        e.preventDefault();
+        var valid = true;
+        var emailEl = document.getElementById('email');
+        var passwordEl = document.getElementById('password');
+
+        document.getElementById('login-error').classList.add('hidden');
+
+        if (!emailEl.value.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailEl.value)) {
+          emailEl.classList.add('border-red-400');
+          document.getElementById('email-error').classList.remove('hidden');
+          valid = false;
+        }
+        if (!passwordEl.value.trim()) {
+          passwordEl.classList.add('border-red-400');
+          document.getElementById('password-error').classList.remove('hidden');
+          valid = false;
+        }
+        if (!valid) return;
+
+        var result = AuthService.login(emailEl.value.trim(), passwordEl.value);
+        if (result.ok) {
+          var s = AuthService.getSession();
+          document.getElementById('login-form').classList.add('hidden');
+          var success = document.getElementById('login-success');
+          success.classList.remove('hidden');
+          success.querySelector('h2').textContent = 'Bun venit, ' + s.firstName + '!';
+          setTimeout(function () { window.location.href = 'index.html'; }, 1500);
+        } else {
+          document.getElementById('login-error').classList.remove('hidden');
+        }
+      });
+
+      ['btn-google', 'btn-facebook'].forEach(function (id) {
+        document.getElementById(id).addEventListener('click', function () {
+          document.getElementById('social-msg').classList.remove('hidden');
+        });
+      });
+
+      document.getElementById('search-toggle').addEventListener('click', function () {
+        var overlay = document.getElementById('search-overlay');
+        overlay.style.display = 'flex'; overlay.style.flexDirection = 'column';
+        document.getElementById('search-input').focus();
+      });
+      document.getElementById('search-close').addEventListener('click', function () {
+        document.getElementById('search-overlay').style.display = 'none';
+        document.getElementById('search-input').value = '';
+        document.getElementById('search-results').innerHTML = '';
+        document.getElementById('search-empty').style.display = 'none';
+      });
+    </script></body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "name": "victorias-secret-ro",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Victoria's Secret Romania – E-commerce storefront",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "type-check": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.5",
+    "vite": "^5.3.0"
+  }
+}

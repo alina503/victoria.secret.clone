@@ -1,0 +1,321 @@
+<html lang="ro">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contul Meu — Victoria's Secret</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style/style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="js/cart.service.js"></script>
+    <script src="js/auth.service.js"></script>
+  </head>
+  <body class="bg-white">
+    <header>
+      <div class="bg-[#f9e2e7] py-2 w-full">
+        <div class="font-extralight text-xs sm:text-sm mx-auto flex flex-col sm:flex-row justify-center items-center gap-2 sm:gap-4 text-center px-4">
+          <p>SITE-UL OFICIAL VICTORIA'S SECRET LIVRARE GRATUITĂ DE LA 269 LEI</p>
+          <a class="text-xs sm:text-sm bg-transparent hover:bg-[#e8e3e4] border-black border px-3 py-[3px] rounded-sm whitespace-nowrap" href="#">VEZI OFERTELE</a>
+        </div>
+      </div>
+      <div class="w-full bg-[#eee9ea] py-2">
+        <div class="container mx-auto px-4">
+          <div class="flex justify-between items-center">
+            <nav class="flex flex-wrap gap-2 sm:gap-4 items-center">
+              <li class="list-none border-r-2 border-gray-400 pr-2 sm:pr-6 text-xs sm:text-sm font-light"><a href="index.html" class="hover:font-semibold">VICTORIA'S SECRET</a></li>
+              <li class="list-none border-r-2 border-gray-400 pr-2 sm:pr-6 text-xs sm:text-sm font-light"><a href="pink.html" class="hover:font-semibold">PINK</a></li>
+              <li class="list-none text-xs sm:text-sm font-light"><a href="vs-beauty.html" class="hover:font-semibold">BEAUTY</a></li>
+            </nav>
+            <div class="flex gap-4 items-center">
+              <button aria-label="Meniu" id="hamburger" class="sm:hidden text-xl"><i class="fa-solid fa-bars"></i></button>
+              <button id="search-toggle" aria-label="Căutare" title="Căutare"><i class="fa-solid fa-magnifying-glass text-xl sm:text-2xl cursor-pointer"></i></button>
+              <a href="login.html" id="user-nav-link" title="Contul meu"><i id="user-nav-icon" class="fa-regular fa-user text-xl sm:text-2xl cursor-pointer"></i></a>
+              <a href="cos-de-cumparaturi.html" title="Coș de cumpărături" class="relative">
+                <i class="fa-solid fa-bag-shopping text-xl sm:text-2xl cursor-pointer"></i>
+                <span class="cart-badge absolute -top-2 -right-2 bg-[#c37989] text-white text-[10px] rounded-full w-4 h-4 font-bold" style="display:none;align-items:center;justify-content:center">0</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="w-full border-b border-gray-200 hidden sm:block">
+        <div class="container mx-auto px-4">
+          <nav><ul class="flex justify-between text-sm font-light py-3">
+            <li><a href="nou.html" class="hover:nav-active px-1 py-2">NOU</a></li>
+            <li><a href="sutiene.html" class="hover:nav-active px-1 py-2">SUTIENE</a></li>
+            <li><a href="chiloti.html" class="hover:nav-active px-1 py-2">CHILOȚI</a></li>
+            <li><a href="lenjerie.html" class="hover:nav-active px-1 py-2">LENJERIE</a></li>
+            <li><a href="pijama.html" class="hover:nav-active px-1 py-2">PIJAMA</a></li>
+            <li><a href="haine-sport.html" class="hover:nav-active px-1 py-2">HAINE SPORT</a></li>
+            <li><a href="vs-beauty.html" class="hover:nav-active px-1 py-2">BEAUTY</a></li>
+            <li><a href="accesorii.html" class="hover:nav-active px-1 py-2">ACCESORII</a></li>
+            <li><a href="swim.html" class="hover:nav-active px-1 py-2">SWIM</a></li>
+            <li><a href="vs-now.html" class="hover:nav-active px-1 py-2">VS NOW</a></li>
+          </ul></nav>
+        </div>
+      </div>
+      <div id="mobile-menu" class="sm:hidden bg-white border-b border-gray-200 shadow-md">
+        <nav><ul class="flex flex-col text-sm font-light divide-y divide-gray-100">
+          <li><a href="nou.html" class="block px-6 py-3 hover:bg-gray-50">NOU</a></li>
+          <li><a href="sutiene.html" class="block px-6 py-3 hover:bg-gray-50">SUTIENE</a></li>
+          <li><a href="chiloti.html" class="block px-6 py-3 hover:bg-gray-50">CHILOȚI</a></li>
+          <li><a href="lenjerie.html" class="block px-6 py-3 hover:bg-gray-50">LENJERIE</a></li>
+          <li><a href="pijama.html" class="block px-6 py-3 hover:bg-gray-50">PIJAMA</a></li>
+          <li><a href="haine-sport.html" class="block px-6 py-3 hover:bg-gray-50">HAINE SPORT</a></li>
+          <li><a href="vs-beauty.html" class="block px-6 py-3 hover:bg-gray-50">BEAUTY</a></li>
+          <li><a href="accesorii.html" class="block px-6 py-3 hover:bg-gray-50">ACCESORII</a></li>
+          <li><a href="swim.html" class="block px-6 py-3 hover:bg-gray-50">SWIM</a></li>
+          <li><a href="vs-now.html" class="block px-6 py-3 hover:bg-gray-50">VS NOW</a></li>
+        </ul></nav>
+      </div>
+    </header>
+
+    <!-- Search overlay -->
+    <div id="search-overlay" style="display:none" class="fixed inset-0 z-50 flex-col items-center justify-start bg-white pt-20 px-4">
+      <div class="w-full max-w-2xl mx-auto">
+        <div class="flex items-center border-b-2 border-black pb-2 mb-6">
+          <i class="fa-solid fa-magnifying-glass text-gray-400 mr-3"></i>
+          <input id="search-input" type="text" placeholder="Cauta produse..." class="flex-1 text-lg outline-none" autocomplete="off" />
+          <button id="search-close" class="ml-4 text-2xl text-gray-400 hover:text-black">&times;</button>
+        </div>
+        <div id="search-results" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4"></div>
+        <p id="search-empty" class="text-gray-500 text-center mt-8" style="display:none">Niciun produs gasit.</p>
+      </div>
+    </div>
+
+    <!-- Not logged in state -->
+    <div id="not-logged-in" class="hidden min-h-[70vh] flex items-center justify-center px-4">
+      <div class="text-center">
+        <i class="fa-regular fa-user text-5xl text-gray-300 mb-4 block"></i>
+        <h1 class="text-2xl font-light mb-2">Contul meu</h1>
+        <p class="text-gray-500 text-sm mb-6">Conectează-te pentru a-ți vedea contul și istoricul comenzilor.</p>
+        <div class="flex flex-col sm:flex-row gap-3 justify-center">
+          <a href="login.html" class="bg-black text-white text-sm px-8 py-3 hover:bg-gray-800 transition">CONECTEAZĂ-TE</a>
+          <a href="inregistrare.html" class="border border-black text-sm px-8 py-3 hover:bg-gray-50 transition">CREEAZĂ CONT</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Logged in state -->
+    <main id="account-content" class="hidden container mx-auto px-4 py-10 max-w-4xl">
+      <h1 class="text-2xl sm:text-3xl font-light mb-8">CONTUL MEU</h1>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+        <!-- Sidebar -->
+        <aside class="lg:col-span-1">
+          <div class="border border-gray-200 p-6">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-12 h-12 rounded-full bg-[#f9e2e7] flex items-center justify-center">
+                <i class="fa-solid fa-user text-[#c37989] text-lg"></i>
+              </div>
+              <div>
+                <p id="acc-name" class="font-medium text-sm"></p>
+                <p id="acc-email" class="text-xs text-gray-500"></p>
+              </div>
+            </div>
+            <nav class="flex flex-col gap-1">
+              <button data-tab="orders" class="tab-btn text-left text-sm px-3 py-2 hover:bg-gray-50 transition font-medium text-black bg-gray-50">
+                <i class="fa-solid fa-box-open mr-2 text-gray-400 w-4"></i>Istoricul comenzilor
+              </button>
+              <button data-tab="profile" class="tab-btn text-left text-sm px-3 py-2 hover:bg-gray-50 transition text-gray-600">
+                <i class="fa-solid fa-user mr-2 text-gray-400 w-4"></i>Profilul meu
+              </button>
+              <button data-tab="wishlist-link" class="tab-btn text-left text-sm px-3 py-2 hover:bg-gray-50 transition text-gray-600" onclick="window.location.href='lista-de-dorinte.html'">
+                <i class="fa-regular fa-heart mr-2 text-gray-400 w-4"></i>Lista de dorințe
+              </button>
+              <hr class="my-2 border-gray-200" />
+              <button id="logout-btn" class="text-left text-sm px-3 py-2 hover:bg-gray-50 transition text-gray-600">
+                <i class="fa-solid fa-right-from-bracket mr-2 text-gray-400 w-4"></i>Deconectează-te
+              </button>
+            </nav>
+          </div>
+        </aside>
+
+        <!-- Main content -->
+        <div class="lg:col-span-2">
+
+          <!-- Orders tab -->
+          <div id="tab-orders" class="tab-panel">
+            <h2 class="text-lg font-semibold mb-6">Istoricul comenzilor</h2>
+            <div id="orders-list" class="flex flex-col gap-4"></div>
+            <div id="no-orders" class="hidden text-center py-12 border border-gray-200">
+              <i class="fa-solid fa-box-open text-4xl text-gray-300 mb-3 block"></i>
+              <p class="text-gray-500 text-sm mb-4">Nu ai plaseat nicio comandă încă.</p>
+              <a href="index.html" class="bg-black text-white text-sm px-6 py-3 hover:bg-gray-800 transition">ÎNCEPE CUMPĂRĂTURILE</a>
+            </div>
+          </div>
+
+          <!-- Profile tab -->
+          <div id="tab-profile" class="tab-panel hidden">
+            <h2 class="text-lg font-semibold mb-6">Profilul meu</h2>
+            <form id="profile-form" class="flex flex-col gap-4 max-w-md">
+              <div class="flex flex-col sm:flex-row gap-4">
+                <div class="flex-1">
+                  <label class="text-xs text-gray-600 block mb-1">Prenume</label>
+                  <input id="pf-first-name" type="text" class="w-full border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:border-black transition" />
+                </div>
+                <div class="flex-1">
+                  <label class="text-xs text-gray-600 block mb-1">Nume</label>
+                  <input id="pf-last-name" type="text" class="w-full border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:border-black transition" />
+                </div>
+              </div>
+              <div>
+                <label class="text-xs text-gray-600 block mb-1">Adresă de e-mail</label>
+                <input id="pf-email" type="email" class="w-full border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:border-black transition bg-gray-50" disabled />
+                <p class="text-xs text-gray-400 mt-1">E-mailul nu poate fi modificat.</p>
+              </div>
+              <p id="profile-success" class="text-green-600 text-xs hidden">Profilul a fost actualizat cu succes.</p>
+              <button type="submit" class="bg-black text-white text-sm py-3 hover:bg-gray-800 transition w-full sm:w-auto sm:px-10 tracking-wider mt-2">SALVEAZĂ</button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </main>
+
+    <footer class="bg-gray-100 w-full mt-10">
+      <div class="container mx-auto flex flex-col lg:flex-row gap-10 lg:gap-[150px] px-4 pt-10 pb-10">
+        <div class="flex flex-col w-full lg:max-w-[500px]">
+          <p class="text-lg font-semibold pb-4">ABONEAZĂ-TE LA NEWSLETTER</p>
+          <form class="newsletter-form flex flex-col gap-0">
+            <input class="bg-white py-3 px-3 border border-gray-200" placeholder="Introdu adresa de email" type="email" />
+            <button type="submit" class="bg-black text-white text-xs py-3 px-6 hover:bg-gray-800 transition mt-2 tracking-wider w-full">ABONEAZĂ-TE</button>
+            <p class="newsletter-msg text-xs mt-2"></p>
+          </form>
+          <span class="pt-5 pb-10 text-sm">Prin abonare ești de acord cu <a class="text-[#c37989]" href="politica-de-confidentialitate.html">politica noastră de confidențialitate.</a></span>
+          <img class="w-full max-w-[400px] pb-7" src="assets/icon/VSFA_220818_-_ANPC_Buttons_1.avif" alt="ANPC" />
+          <img class="w-full max-w-[400px] pb-11" src="assets/icon/VSFA_220818_-_ANPC_Buttons_2.avif" alt="ANPC" />
+        </div>
+        <div class="w-full pb-10"><nav class="grid grid-cols-1 sm:grid-cols-3 gap-8"><ul class="flex flex-col gap-4 text-sm"><li class="font-semibold">AJUTOR</li><li><a href="faq.html" class="hover:text-[#af5071]">FAQ</a></li><li><a href="contact.html" class="hover:text-[#af5071]">Contactează-ne</a></li></ul><ul class="flex flex-col gap-4 text-sm"><li class="font-semibold">INFORMAȚII</li><li><a href="livrare-plata.html" class="hover:text-[#af5071]">Livrare și plată</a></li><li><a href="returnari.html" class="hover:text-[#af5071]">Returnări</a></li></ul><ul class="flex flex-col gap-4 text-sm"><li class="font-semibold">ASISTENȚĂ</li><li><a href="contul-meu.html" class="hover:text-[#af5071]">Contul meu</a></li><li><a href="termeni-conditii.html" class="hover:text-[#af5071]">Termeni</a></li></ul></nav></div>
+      </div>
+    </footer>
+    <div class="w-full py-5 border-t border-gray-200"><div class="container mx-auto px-4"><span class="text-sm text-gray-500">© 2024 Victoria's Secret. All Rights Reserved.</span></div></div>
+
+    <script>
+    (function () {
+      var session = AuthService.getSession();
+
+      if (!session) {
+        document.getElementById('not-logged-in').classList.remove('hidden');
+        document.getElementById('not-logged-in').classList.add('flex');
+        return;
+      }
+
+      document.getElementById('account-content').classList.remove('hidden');
+      document.getElementById('acc-name').textContent = session.firstName + ' ' + session.lastName;
+      document.getElementById('acc-email').textContent = session.email;
+
+      // Pre-fill profile form
+      document.getElementById('pf-first-name').value = session.firstName || '';
+      document.getElementById('pf-last-name').value = session.lastName || '';
+      document.getElementById('pf-email').value = session.email || '';
+
+      // Tab switching
+      document.querySelectorAll('.tab-btn').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var tab = this.dataset.tab;
+          if (!tab || tab === 'wishlist-link') return;
+          document.querySelectorAll('.tab-btn').forEach(function (b) {
+            b.classList.remove('font-medium', 'text-black', 'bg-gray-50');
+            b.classList.add('text-gray-600');
+          });
+          this.classList.add('font-medium', 'text-black', 'bg-gray-50');
+          this.classList.remove('text-gray-600');
+          document.querySelectorAll('.tab-panel').forEach(function (p) { p.classList.add('hidden'); });
+          document.getElementById('tab-' + tab).classList.remove('hidden');
+        });
+      });
+
+      // Load orders
+      var historyKey = 'vs_orders_' + session.id;
+      var orders = [];
+      try { orders = JSON.parse(localStorage.getItem(historyKey) || '[]'); } catch { orders = []; }
+
+      var ordersContainer = document.getElementById('orders-list');
+      if (orders.length === 0) {
+        document.getElementById('no-orders').classList.remove('hidden');
+      } else {
+        orders.forEach(function (order) {
+          var date = new Date(order.date);
+          var dateStr = date.toLocaleDateString('ro-RO', { day: 'numeric', month: 'long', year: 'numeric' });
+          var payLabels = { card: 'Card bancar', paypal: 'PayPal', ramburs: 'Ramburs' };
+          var itemCount = order.items.reduce(function (s, i) { return s + i.qty; }, 0);
+
+          var div = document.createElement('div');
+          div.className = 'border border-gray-200 p-5';
+          div.innerHTML =
+            '<div class="flex flex-col sm:flex-row justify-between gap-3 mb-4">' +
+              '<div>' +
+                '<p class="text-xs text-gray-400 uppercase tracking-wider mb-1">Comanda</p>' +
+                '<p class="font-mono font-semibold text-[#c37989]">' + order.id + '</p>' +
+              '</div>' +
+              '<div class="text-right sm:text-right">' +
+                '<p class="text-xs text-gray-400 uppercase tracking-wider mb-1">Data</p>' +
+                '<p class="text-sm">' + dateStr + '</p>' +
+              '</div>' +
+              '<div class="text-right">' +
+                '<p class="text-xs text-gray-400 uppercase tracking-wider mb-1">Total</p>' +
+                '<p class="text-sm font-semibold">' + order.total.toFixed(2) + ' lei</p>' +
+              '</div>' +
+            '</div>' +
+            '<div class="border-t border-gray-100 pt-3 flex flex-wrap gap-2 text-xs text-gray-500">' +
+              '<span><i class="fa-solid fa-box mr-1"></i>' + itemCount + ' produ' + (itemCount === 1 ? 's' : 'se') + '</span>' +
+              '<span class="mx-2">·</span>' +
+              '<span><i class="fa-solid fa-truck mr-1"></i>' + (order.delivery.method === 'express' ? 'Express' : 'Standard') + '</span>' +
+              '<span class="mx-2">·</span>' +
+              '<span><i class="fa-solid fa-credit-card mr-1"></i>' + (payLabels[order.payment] || order.payment) + '</span>' +
+              '<span class="mx-2">·</span>' +
+              '<span><i class="fa-solid fa-location-dot mr-1"></i>' + order.delivery.city + '</span>' +
+            '</div>';
+          ordersContainer.appendChild(div);
+        });
+      }
+
+      // Profile save
+      document.getElementById('profile-form').addEventListener('submit', function (e) {
+        e.preventDefault();
+        var fn = document.getElementById('pf-first-name').value.trim();
+        var ln = document.getElementById('pf-last-name').value.trim();
+        if (!fn || !ln) return;
+
+        // Update session
+        var users = [];
+        try { users = JSON.parse(localStorage.getItem('vs_users') || '[]'); } catch { users = []; }
+        var user = users.find(function (u) { return u.id === session.id; });
+        if (user) { user.firstName = fn; user.lastName = ln; }
+        try { localStorage.setItem('vs_users', JSON.stringify(users)); } catch { /* quota */ }
+
+        var newSession = { id: session.id, firstName: fn, lastName: ln, email: session.email };
+        localStorage.setItem('vs_user', JSON.stringify(newSession));
+
+        document.getElementById('acc-name').textContent = fn + ' ' + ln;
+        document.getElementById('profile-success').classList.remove('hidden');
+        setTimeout(function () { document.getElementById('profile-success').classList.add('hidden'); }, 3000);
+      });
+
+      // Logout
+      document.getElementById('logout-btn').addEventListener('click', function () {
+        openLogoutModal(session.firstName + ' ' + session.lastName, function () {
+          AuthService.logout();
+          window.location.href = 'index.html';
+        });
+      });
+
+      // Search overlay
+      document.getElementById('search-toggle').addEventListener('click', function () {
+        var overlay = document.getElementById('search-overlay');
+        overlay.style.display = 'flex'; overlay.style.flexDirection = 'column';
+        document.getElementById('search-input').focus();
+      });
+      document.getElementById('search-close').addEventListener('click', function () {
+        document.getElementById('search-overlay').style.display = 'none';
+      });
+
+      // Mobile menu
+      document.getElementById('hamburger').addEventListener('click', function () {
+        document.getElementById('mobile-menu').classList.toggle('open');
+      });
+    })();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,179 @@
+<html lang="ro">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Comandă Confirmată — Victoria's Secret</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style/style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="js/cart.service.js"></script>
+    <script src="js/auth.service.js"></script>
+  </head>
+  <body class="bg-white">
+
+    <header class="border-b border-gray-200">
+      <div class="bg-[#f9e2e7] py-2 w-full text-center">
+        <p class="font-extralight text-xs sm:text-sm">SITE-UL OFICIAL VICTORIA'S SECRET — LIVRARE GRATUITĂ DE LA 269 LEI</p>
+      </div>
+      <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+        <a href="index.html" class="font-bold tracking-widest text-lg">VICTORIA'S SECRET</a>
+        <div class="flex items-center gap-2 text-xs text-gray-500">
+          <i class="fa-solid fa-lock text-[#c37989]"></i>
+          <span>Plată securizată SSL</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-16 max-w-2xl">
+
+      <!-- Success icon + headline -->
+      <div class="text-center mb-10">
+        <div class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-[#f9e2e7] mb-6">
+          <i class="fa-solid fa-check text-3xl text-[#c37989]"></i>
+        </div>
+        <h1 class="text-2xl sm:text-3xl font-light mb-2">Comanda ta a fost plasată!</h1>
+        <p class="text-gray-500 text-sm">Îți mulțumim pentru cumpărături. Vei primi un e-mail de confirmare în curând.</p>
+        <p class="mt-3 text-sm">
+          Numărul comenzii: <strong id="order-id" class="font-mono text-[#c37989]">—</strong>
+        </p>
+      </div>
+
+      <!-- Order details -->
+      <div class="border border-gray-200 divide-y divide-gray-100">
+
+        <!-- Items -->
+        <div class="p-6">
+          <h2 class="text-sm font-semibold uppercase tracking-wider mb-4">Produse comandate</h2>
+          <div id="conf-items" class="flex flex-col gap-4"></div>
+        </div>
+
+        <!-- Delivery info -->
+        <div class="p-6">
+          <h2 class="text-sm font-semibold uppercase tracking-wider mb-4">Informații livrare</h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
+            <div>
+              <p class="text-xs text-gray-400 mb-1">Destinatar</p>
+              <p id="conf-name" class="font-medium"></p>
+              <p id="conf-email" class="text-gray-500 text-xs mt-1"></p>
+              <p id="conf-phone" class="text-gray-500 text-xs"></p>
+            </div>
+            <div>
+              <p class="text-xs text-gray-400 mb-1">Adresă</p>
+              <p id="conf-address" class="text-gray-600"></p>
+            </div>
+            <div>
+              <p class="text-xs text-gray-400 mb-1">Metodă livrare</p>
+              <p id="conf-shipping-method" class="text-gray-600"></p>
+            </div>
+            <div>
+              <p class="text-xs text-gray-400 mb-1">Metodă plată</p>
+              <p id="conf-payment" class="text-gray-600"></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Totals -->
+        <div class="p-6">
+          <h2 class="text-sm font-semibold uppercase tracking-wider mb-4">Sumar comandă</h2>
+          <div class="flex flex-col gap-2 text-sm">
+            <div class="flex justify-between">
+              <span class="text-gray-500">Subtotal</span>
+              <span id="conf-subtotal">—</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-gray-500">Livrare</span>
+              <span id="conf-shipping-cost">—</span>
+            </div>
+            <div class="flex justify-between font-semibold text-base border-t border-gray-100 pt-3 mt-1">
+              <span>Total</span>
+              <span id="conf-total">—</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- CTA buttons -->
+      <div class="flex flex-col sm:flex-row gap-4 mt-10 justify-center">
+        <a href="index.html"
+          class="bg-black text-white text-sm px-10 py-4 hover:bg-gray-800 transition tracking-wide text-center">
+          CONTINUĂ CUMPĂRĂTURILE
+        </a>
+        <a href="sutiene.html"
+          class="border border-black text-sm px-10 py-4 hover:bg-gray-50 transition tracking-wide text-center">
+          DESCOPERĂ COLECȚIA
+        </a>
+      </div>
+
+      <!-- Estimated delivery -->
+      <div class="mt-10 bg-[#f9e2e7] p-6 text-center">
+        <i class="fa-solid fa-truck text-[#c37989] text-2xl mb-3 block"></i>
+        <p class="text-sm font-medium mb-1">Livrare estimată</p>
+        <p id="conf-eta" class="text-gray-600 text-sm"></p>
+      </div>
+    </main>
+
+    <footer class="bg-gray-100 w-full mt-10 border-t border-gray-200">
+      <div class="container mx-auto px-4 py-6 text-center text-sm text-gray-500">
+        © 2024 Victoria's Secret. All Rights Reserved.
+      </div>
+    </footer>
+
+    <script>
+    (function () {
+      function fmtPrice(n) { return n.toFixed(2) + ' lei'; }
+
+      var order;
+      try { order = JSON.parse(localStorage.getItem('vs_last_order') || ''); } catch { order = null; }
+
+      if (!order) { window.location.href = 'index.html'; return; }
+
+      document.getElementById('order-id').textContent = order.id;
+
+      // Render items
+      var container = document.getElementById('conf-items');
+      order.items.forEach(function (item) {
+        var div = document.createElement('div');
+        div.className = 'flex gap-3 items-start';
+        div.innerHTML = `
+          <img src="${item.image}" alt="${item.name}" class="w-16 h-16 object-cover shrink-0" />
+          <div class="flex-1 text-sm">
+            <p class="font-medium">${item.name}</p>
+            <p class="text-gray-500 text-xs">${item.subtitle}</p>
+            <p class="text-gray-400 text-xs">Mărime: ${item.size} · Cantitate: ${item.qty}</p>
+          </div>
+          <p class="text-sm font-semibold">${fmtPrice(item.price * item.qty)}</p>`;
+        container.appendChild(div);
+      });
+
+      // Delivery info
+      document.getElementById('conf-name').textContent = order.delivery.name;
+      document.getElementById('conf-email').textContent = order.delivery.email;
+      document.getElementById('conf-phone').textContent = order.delivery.phone;
+      document.getElementById('conf-address').textContent =
+        order.delivery.address + ', ' + order.delivery.city + ', jud. ' + order.delivery.county + ', ' + order.delivery.zip;
+
+      var shippingLabels = { standard: 'Standard (3–5 zile lucrătoare)', express: 'Express (1–2 zile lucrătoare)' };
+      var paymentLabels = { card: 'Card bancar', paypal: 'PayPal', ramburs: 'Ramburs la livrare' };
+      document.getElementById('conf-shipping-method').textContent = shippingLabels[order.delivery.method] || order.delivery.method;
+      document.getElementById('conf-payment').textContent = paymentLabels[order.payment] || order.payment;
+
+      // Totals
+      document.getElementById('conf-subtotal').textContent = fmtPrice(order.subtotal);
+      var shipCost = order.delivery.cost;
+      var shipEl = document.getElementById('conf-shipping-cost');
+      shipEl.textContent = shipCost === 0 ? 'Gratuită' : fmtPrice(shipCost);
+      if (shipCost === 0) shipEl.className = 'text-green-600 font-medium';
+      document.getElementById('conf-total').textContent = fmtPrice(order.total);
+
+      // ETA
+      var today = new Date();
+      var days = order.delivery.method === 'express' ? 2 : 5;
+      var eta = new Date(today.getTime() + days * 24 * 60 * 60 * 1000);
+      var opts = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' };
+      document.getElementById('conf-eta').textContent =
+        'Până pe ' + eta.toLocaleDateString('ro-RO', opts);
+    })();
+    </script>
+  </body>
+</html>

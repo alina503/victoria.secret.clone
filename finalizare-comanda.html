@@ -1,0 +1,518 @@
+<html lang="ro">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Finalizare Comandă — Victoria's Secret</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style/style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="js/cart.service.js"></script>
+    <script src="js/auth.service.js"></script>
+  </head>
+  <body class="bg-white">
+
+    <!-- Minimal header for checkout -->
+    <header class="border-b border-gray-200">
+      <div class="bg-[#f9e2e7] py-2 w-full text-center">
+        <p class="font-extralight text-xs sm:text-sm">SITE-UL OFICIAL VICTORIA'S SECRET — LIVRARE GRATUITĂ DE LA 269 LEI</p>
+      </div>
+      <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+        <a href="index.html" class="font-bold tracking-widest text-lg">VICTORIA'S SECRET</a>
+        <div class="flex items-center gap-2 text-xs text-gray-500">
+          <i class="fa-solid fa-lock text-[#c37989]"></i>
+          <span>Plată securizată SSL</span>
+        </div>
+      </div>
+      <!-- Step indicator -->
+      <div class="border-t border-gray-100 bg-gray-50 py-3">
+        <div class="container mx-auto px-4">
+          <ol class="flex items-center gap-2 text-xs sm:text-sm">
+            <li class="flex items-center gap-1">
+              <a href="cos-de-cumparaturi.html" class="text-gray-400 hover:text-black">Coș</a>
+            </li>
+            <li class="text-gray-300">/</li>
+            <li id="step-info-label" class="flex items-center gap-1 font-semibold text-black">Informații</li>
+            <li class="text-gray-300">/</li>
+            <li id="step-pay-label" class="flex items-center gap-1 text-gray-400">Plată</li>
+          </ol>
+        </div>
+      </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-10">
+      <div class="flex flex-col lg:flex-row gap-12">
+
+        <!-- Left: Steps -->
+        <div class="flex-1 max-w-xl">
+
+          <!-- STEP 1: Delivery info -->
+          <section id="step-info" class="">
+            <h2 class="text-lg font-semibold mb-6">Informații de livrare</h2>
+
+            <form id="delivery-form" class="flex flex-col gap-4" novalidate>
+
+              <!-- Contact -->
+              <div>
+                <p class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">Contact</p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                  <div class="flex-1">
+                    <input id="d-first-name" type="text" placeholder="Prenume *"
+                      class="w-full border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:border-black transition" />
+                    <p class="field-error text-red-400 text-xs mt-1 hidden">Câmp obligatoriu.</p>
+                  </div>
+                  <div class="flex-1">
+                    <input id="d-last-name" type="text" placeholder="Nume *"
+                      class="w-full border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:border-black transition" />
+                    <p class="field-error text-red-400 text-xs mt-1 hidden">Câmp obligatoriu.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <input id="d-email" type="email" placeholder="Adresă de e-mail *"
+                  class="w-full border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:border-black transition" />
+                <p class="field-error text-red-400 text-xs mt-1 hidden">Introduceți un e-mail valid.</p>
+              </div>
+              <div>
+                <input id="d-phone" type="tel" placeholder="Telefon *"
+                  class="w-full border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:border-black transition" />
+                <p class="field-error text-red-400 text-xs mt-1 hidden">Introduceți un număr de telefon valid.</p>
+              </div>
+
+              <!-- Address -->
+              <div class="mt-2">
+                <p class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">Adresă de livrare</p>
+                <div class="flex flex-col gap-4">
+                  <div>
+                    <input id="d-address" type="text" placeholder="Stradă și număr *"
+                      class="w-full border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:border-black transition" />
+                    <p class="field-error text-red-400 text-xs mt-1 hidden">Câmp obligatoriu.</p>
+                  </div>
+                  <input id="d-address2" type="text" placeholder="Apartament, bloc, scară (opțional)"
+                    class="w-full border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:border-black transition" />
+                  <div class="flex flex-col sm:flex-row gap-4">
+                    <div class="flex-1">
+                      <input id="d-city" type="text" placeholder="Oraș *"
+                        class="w-full border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:border-black transition" />
+                      <p class="field-error text-red-400 text-xs mt-1 hidden">Câmp obligatoriu.</p>
+                    </div>
+                    <div class="flex-1">
+                      <input id="d-county" type="text" placeholder="Județ *"
+                        class="w-full border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:border-black transition" />
+                      <p class="field-error text-red-400 text-xs mt-1 hidden">Câmp obligatoriu.</p>
+                    </div>
+                    <div class="w-28">
+                      <input id="d-zip" type="text" placeholder="Cod poștal *"
+                        class="w-full border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:border-black transition" />
+                      <p class="field-error text-red-400 text-xs mt-1 hidden">Câmp obligatoriu.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Shipping method -->
+              <div class="mt-2">
+                <p class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">Metodă de livrare</p>
+                <div class="flex flex-col gap-2">
+                  <label class="flex items-center justify-between border border-gray-300 p-3 cursor-pointer hover:border-black transition has-[:checked]:border-black">
+                    <div class="flex items-center gap-3">
+                      <input type="radio" name="shipping" value="standard" class="accent-black" checked />
+                      <div>
+                        <p class="text-sm font-medium">Livrare Standard</p>
+                        <p class="text-xs text-gray-500">3–5 zile lucrătoare</p>
+                      </div>
+                    </div>
+                    <span id="shipping-standard-price" class="text-sm font-medium">20.00 lei</span>
+                  </label>
+                  <label class="flex items-center justify-between border border-gray-300 p-3 cursor-pointer hover:border-black transition has-[:checked]:border-black">
+                    <div class="flex items-center gap-3">
+                      <input type="radio" name="shipping" value="express" class="accent-black" />
+                      <div>
+                        <p class="text-sm font-medium">Livrare Express</p>
+                        <p class="text-xs text-gray-500">1–2 zile lucrătoare</p>
+                      </div>
+                    </div>
+                    <span class="text-sm font-medium">39.00 lei</span>
+                  </label>
+                </div>
+              </div>
+
+              <button type="submit"
+                class="bg-black text-white py-4 text-sm font-semibold hover:bg-gray-800 transition w-full tracking-wide mt-2">
+                CONTINUĂ SPRE PLATĂ
+              </button>
+              <a href="cos-de-cumparaturi.html" class="flex items-center gap-2 text-xs text-gray-500 hover:text-black">
+                <i class="fa-solid fa-arrow-left text-xs"></i> Înapoi la coș
+              </a>
+            </form>
+          </section>
+
+          <!-- STEP 2: Payment -->
+          <section id="step-pay" class="hidden">
+            <h2 class="text-lg font-semibold mb-6">Plată</h2>
+
+            <!-- Delivery summary -->
+            <div id="delivery-summary" class="border border-gray-200 p-4 mb-6 text-sm flex flex-col gap-2">
+              <div class="flex justify-between text-gray-600">
+                <span class="text-xs text-gray-400 uppercase">Contact</span>
+                <button id="edit-delivery" class="text-xs text-[#c37989] hover:text-[#af5071]">Modifică</button>
+              </div>
+              <p id="ds-name" class="font-medium"></p>
+              <p id="ds-email" class="text-gray-500 text-xs"></p>
+              <p id="ds-phone" class="text-gray-500 text-xs"></p>
+              <div class="border-t border-gray-100 pt-2 mt-1">
+                <span class="text-xs text-gray-400 uppercase">Adresă</span>
+                <p id="ds-address" class="text-gray-600 text-xs mt-1"></p>
+              </div>
+              <div class="border-t border-gray-100 pt-2 mt-1">
+                <span class="text-xs text-gray-400 uppercase">Livrare</span>
+                <p id="ds-shipping" class="text-gray-600 text-xs mt-1"></p>
+              </div>
+            </div>
+
+            <form id="payment-form" class="flex flex-col gap-4" novalidate>
+              <div>
+                <p class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">Metodă de plată</p>
+                <div class="flex flex-col gap-2">
+                  <label class="flex items-center gap-3 border border-gray-300 p-3 cursor-pointer hover:border-black transition has-[:checked]:border-black">
+                    <input type="radio" name="payment" value="card" class="accent-black" checked />
+                    <div class="flex items-center gap-2 flex-1">
+                      <span class="text-sm">Card bancar</span>
+                      <div class="flex gap-1 ml-auto text-gray-400 text-xl">
+                        <i class="fa-brands fa-cc-visa"></i>
+                        <i class="fa-brands fa-cc-mastercard"></i>
+                      </div>
+                    </div>
+                  </label>
+                  <label class="flex items-center gap-3 border border-gray-300 p-3 cursor-pointer hover:border-black transition has-[:checked]:border-black">
+                    <input type="radio" name="payment" value="paypal" class="accent-black" />
+                    <div class="flex items-center gap-2 flex-1">
+                      <span class="text-sm">PayPal</span>
+                      <i class="fa-brands fa-cc-paypal ml-auto text-gray-400 text-xl"></i>
+                    </div>
+                  </label>
+                  <label class="flex items-center gap-3 border border-gray-300 p-3 cursor-pointer hover:border-black transition has-[:checked]:border-black">
+                    <input type="radio" name="payment" value="ramburs" class="accent-black" />
+                    <span class="text-sm">Ramburs la livrare</span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Card fields (shown when card selected) -->
+              <div id="card-fields" class="flex flex-col gap-4 border border-gray-200 p-4">
+                <div>
+                  <input id="p-card-name" type="text" placeholder="Titularul cardului *"
+                    class="w-full border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:border-black transition" />
+                  <p class="field-error text-red-400 text-xs mt-1 hidden">Câmp obligatoriu.</p>
+                </div>
+                <div>
+                  <div class="relative">
+                    <input id="p-card-number" type="text" placeholder="Numărul cardului *" maxlength="19"
+                      class="w-full border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:border-black transition pr-10" />
+                    <i class="fa-regular fa-credit-card absolute right-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                  </div>
+                  <p class="field-error text-red-400 text-xs mt-1 hidden">Număr de card invalid.</p>
+                </div>
+                <div class="flex gap-4">
+                  <div class="flex-1">
+                    <input id="p-expiry" type="text" placeholder="LL/AA *" maxlength="5"
+                      class="w-full border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:border-black transition" />
+                    <p class="field-error text-red-400 text-xs mt-1 hidden">Data expirare invalidă.</p>
+                  </div>
+                  <div class="w-28">
+                    <div class="relative">
+                      <input id="p-cvv" type="text" placeholder="CVV *" maxlength="4"
+                        class="w-full border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:border-black transition pr-8" />
+                      <i class="fa-solid fa-lock absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 text-xs"></i>
+                    </div>
+                    <p class="field-error text-red-400 text-xs mt-1 hidden">CVV invalid.</p>
+                  </div>
+                </div>
+              </div>
+
+              <button type="submit"
+                class="bg-black text-white py-4 text-sm font-semibold hover:bg-gray-800 transition w-full tracking-wide mt-2">
+                PLASEAZĂ COMANDA
+              </button>
+              <div class="flex items-center justify-center gap-2 text-xs text-gray-500">
+                <i class="fa-solid fa-lock text-[#c37989]"></i>
+                <span>Plată securizată SSL — datele tale sunt protejate</span>
+              </div>
+            </form>
+          </section>
+
+        </div>
+
+        <!-- Right: Order summary -->
+        <aside class="lg:w-80 xl:w-96 shrink-0">
+          <div class="border border-gray-200 p-6 sticky top-6">
+            <h2 class="text-base font-semibold border-b border-gray-200 pb-4 mb-4">SUMAR COMANDĂ</h2>
+            <div id="checkout-items" class="flex flex-col gap-4 mb-4"></div>
+
+            <div class="border-t border-gray-200 pt-4 flex flex-col gap-3 text-sm">
+              <div class="flex justify-between">
+                <span class="text-gray-500">Subtotal</span>
+                <span id="co-subtotal">0.00 lei</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-500">Livrare</span>
+                <span id="co-shipping">—</span>
+              </div>
+              <div id="co-discount-row" class="flex justify-between hidden">
+                <span class="text-gray-500">Reducere</span>
+                <span id="co-discount" class="text-green-600">-0.00 lei</span>
+              </div>
+            </div>
+
+            <div class="border-t border-gray-200 mt-4 pt-4 flex justify-between font-semibold text-base">
+              <span>TOTAL</span>
+              <span id="co-total">0.00 lei</span>
+            </div>
+
+            <div class="flex gap-3 justify-center pt-4 text-gray-400 text-xl">
+              <i class="fa-brands fa-cc-visa" title="Visa"></i>
+              <i class="fa-brands fa-cc-mastercard" title="Mastercard"></i>
+              <i class="fa-brands fa-cc-paypal" title="PayPal"></i>
+              <i class="fa-brands fa-apple-pay" title="Apple Pay"></i>
+              <i class="fa-brands fa-google-pay" title="Google Pay"></i>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <script>
+    (function () {
+      const CART_KEY = 'vs_cart';
+      const FREE_SHIPPING = 269;
+      const STANDARD_SHIP = 20;
+      const EXPRESS_SHIP = 39;
+
+      function loadCart() {
+        try { return JSON.parse(localStorage.getItem(CART_KEY) || '[]'); } catch { return []; }
+      }
+
+      function fmtPrice(n) { return n.toFixed(2) + ' lei'; }
+
+      // Redirect to cart if empty
+      const items = loadCart();
+      if (items.length === 0) { window.location.href = 'cos-de-cumparaturi.html'; }
+
+      // Pre-fill from auth session
+      const session = AuthService.getSession();
+      if (session) {
+        document.getElementById('d-first-name').value = session.firstName || '';
+        document.getElementById('d-last-name').value = session.lastName || '';
+        document.getElementById('d-email').value = session.email || '';
+      }
+
+      // Render order summary
+      function renderSummary(shippingCost) {
+        const container = document.getElementById('checkout-items');
+        container.innerHTML = '';
+        items.forEach(function (item) {
+          const div = document.createElement('div');
+          div.className = 'flex gap-3 items-start';
+          div.innerHTML = `
+            <div class="relative shrink-0">
+              <img src="${item.image}" alt="${item.name}" class="w-16 h-16 object-cover" />
+              <span class="absolute -top-2 -right-2 bg-gray-500 text-white text-[10px] rounded-full w-5 h-5 flex items-center justify-center">${item.qty}</span>
+            </div>
+            <div class="flex-1 text-sm">
+              <p class="font-medium leading-tight">${item.name}</p>
+              <p class="text-gray-500 text-xs">${item.subtitle}</p>
+              <p class="text-gray-400 text-xs">Mărime: ${item.size}${item.color ? ' · ' + item.color : ''}</p>
+            </div>
+            <p class="text-sm font-semibold shrink-0">${fmtPrice(item.price * item.qty)}</p>`;
+          container.appendChild(div);
+        });
+
+        const subtotal = items.reduce(function (s, i) { return s + i.price * i.qty; }, 0);
+        const ship = shippingCost !== undefined
+          ? shippingCost
+          : (subtotal >= FREE_SHIPPING ? 0 : STANDARD_SHIP);
+
+        document.getElementById('co-subtotal').textContent = fmtPrice(subtotal);
+        document.getElementById('co-total').textContent = fmtPrice(subtotal + ship);
+
+        const shipEl = document.getElementById('co-shipping');
+        if (ship === 0) {
+          shipEl.textContent = 'Gratuită';
+          shipEl.className = 'text-green-600 font-medium';
+        } else {
+          shipEl.textContent = fmtPrice(ship);
+          shipEl.className = '';
+        }
+      }
+
+      renderSummary();
+
+      // Shipping radio → update summary
+      document.querySelectorAll('input[name="shipping"]').forEach(function (radio) {
+        radio.addEventListener('change', function () {
+          const subtotal = items.reduce(function (s, i) { return s + i.price * i.qty; }, 0);
+          const freeShip = subtotal >= FREE_SHIPPING;
+          let cost = freeShip ? 0 : (this.value === 'express' ? EXPRESS_SHIP : STANDARD_SHIP);
+          renderSummary(cost);
+        });
+      });
+
+      // Payment method toggle
+      document.querySelectorAll('input[name="payment"]').forEach(function (radio) {
+        radio.addEventListener('change', function () {
+          document.getElementById('card-fields').style.display =
+            this.value === 'card' ? 'flex' : 'none';
+        });
+      });
+
+      // Card number formatting
+      document.getElementById('p-card-number').addEventListener('input', function () {
+        var v = this.value.replace(/\D/g, '').slice(0, 16);
+        this.value = v.match(/.{1,4}/g)?.join(' ') || v;
+      });
+      document.getElementById('p-expiry').addEventListener('input', function () {
+        var v = this.value.replace(/\D/g, '').slice(0, 4);
+        if (v.length > 2) v = v.slice(0, 2) + '/' + v.slice(2);
+        this.value = v;
+      });
+      document.getElementById('p-cvv').addEventListener('input', function () {
+        this.value = this.value.replace(/\D/g, '').slice(0, 4);
+      });
+
+      function getField(id) { return document.getElementById(id); }
+      function markError(input) {
+        input.classList.add('border-red-400');
+        var err = input.parentElement.querySelector('.field-error') || input.closest('div').querySelector('.field-error');
+        if (err) err.classList.remove('hidden');
+        return false;
+      }
+      function clearErrors() {
+        document.querySelectorAll('.field-error').forEach(function (e) { e.classList.add('hidden'); });
+        document.querySelectorAll('.border-red-400').forEach(function (e) { e.classList.remove('border-red-400'); });
+      }
+
+      // STEP 1 submit
+      document.getElementById('delivery-form').addEventListener('submit', function (e) {
+        e.preventDefault();
+        clearErrors();
+        var valid = true;
+
+        var req = ['d-first-name', 'd-last-name', 'd-phone', 'd-address', 'd-city', 'd-county', 'd-zip'];
+        req.forEach(function (id) {
+          var el = getField(id);
+          if (!el.value.trim()) { markError(el); valid = false; }
+        });
+
+        var emailEl = getField('d-email');
+        if (!emailEl.value.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailEl.value)) {
+          markError(emailEl); valid = false;
+        }
+        if (!valid) return;
+
+        // Fill delivery summary
+        var fn = getField('d-first-name').value.trim();
+        var ln = getField('d-last-name').value.trim();
+        var city = getField('d-city').value.trim();
+        var county = getField('d-county').value.trim();
+        var zip = getField('d-zip').value.trim();
+        var addr = getField('d-address').value.trim();
+        var addr2 = getField('d-address2').value.trim();
+        var shippingMethod = document.querySelector('input[name="shipping"]:checked').value;
+        var subtotalCheck = items.reduce(function (s, i) { return s + i.price * i.qty; }, 0);
+        var isFreeShip = subtotalCheck >= FREE_SHIPPING;
+        var shippingLabel = shippingMethod === 'express'
+          ? (isFreeShip ? 'Express (1–2 zile) — Gratuită' : 'Express (1–2 zile) — 39.00 lei')
+          : (isFreeShip ? 'Standard (3–5 zile) — Gratuită' : 'Standard (3–5 zile) — 20.00 lei');
+
+        document.getElementById('ds-name').textContent = fn + ' ' + ln;
+        document.getElementById('ds-email').textContent = getField('d-email').value.trim();
+        document.getElementById('ds-phone').textContent = getField('d-phone').value.trim();
+        document.getElementById('ds-address').textContent = addr + (addr2 ? ', ' + addr2 : '') + ', ' + city + ', jud. ' + county + ', ' + zip;
+        document.getElementById('ds-shipping').textContent = shippingLabel;
+
+        document.getElementById('step-info').classList.add('hidden');
+        document.getElementById('step-pay').classList.remove('hidden');
+        document.getElementById('step-info-label').classList.remove('font-semibold', 'text-black');
+        document.getElementById('step-info-label').classList.add('text-gray-400');
+        document.getElementById('step-pay-label').classList.remove('text-gray-400');
+        document.getElementById('step-pay-label').classList.add('font-semibold', 'text-black');
+        window.scrollTo(0, 0);
+      });
+
+      document.getElementById('edit-delivery').addEventListener('click', function () {
+        document.getElementById('step-pay').classList.add('hidden');
+        document.getElementById('step-info').classList.remove('hidden');
+        document.getElementById('step-info-label').classList.add('font-semibold', 'text-black');
+        document.getElementById('step-info-label').classList.remove('text-gray-400');
+        document.getElementById('step-pay-label').classList.add('text-gray-400');
+        document.getElementById('step-pay-label').classList.remove('font-semibold', 'text-black');
+        window.scrollTo(0, 0);
+      });
+
+      // STEP 2 submit
+      document.getElementById('payment-form').addEventListener('submit', function (e) {
+        e.preventDefault();
+        clearErrors();
+        var payMethod = document.querySelector('input[name="payment"]:checked').value;
+        var valid = true;
+
+        if (payMethod === 'card') {
+          var cardName = getField('p-card-name');
+          if (!cardName.value.trim()) { markError(cardName); valid = false; }
+
+          var cardNum = getField('p-card-number');
+          var digits = cardNum.value.replace(/\s/g, '');
+          if (digits.length < 13 || digits.length > 16 || !/^\d+$/.test(digits)) { markError(cardNum); valid = false; }
+
+          var expiry = getField('p-expiry');
+          if (!/^\d{2}\/\d{2}$/.test(expiry.value)) { markError(expiry); valid = false; }
+
+          var cvv = getField('p-cvv');
+          if (!/^\d{3,4}$/.test(cvv.value)) { markError(cvv); valid = false; }
+        }
+
+        if (!valid) return;
+
+        // Save order to localStorage and go to confirmation
+        var shippingMethod = document.querySelector('input[name="shipping"]:checked').value;
+        var shippingCost = shippingMethod === 'express' ? EXPRESS_SHIP : STANDARD_SHIP;
+        var subtotal = items.reduce(function (s, i) { return s + i.price * i.qty; }, 0);
+        if (subtotal >= FREE_SHIPPING) shippingCost = 0;
+
+        var order = {
+          id: 'VS' + Date.now(),
+          date: new Date().toISOString(),
+          items: items,
+          delivery: {
+            name: getField('d-first-name').value.trim() + ' ' + getField('d-last-name').value.trim(),
+            email: getField('d-email').value.trim(),
+            phone: getField('d-phone').value.trim(),
+            address: getField('d-address').value.trim() + (getField('d-address2').value.trim() ? ', ' + getField('d-address2').value.trim() : ''),
+            city: getField('d-city').value.trim(),
+            county: getField('d-county').value.trim(),
+            zip: getField('d-zip').value.trim(),
+            method: shippingMethod,
+            cost: shippingCost,
+          },
+          payment: payMethod,
+          subtotal: subtotal,
+          total: subtotal + shippingCost,
+        };
+
+        localStorage.setItem('vs_last_order', JSON.stringify(order));
+
+        // Append to per-user order history
+        var session = AuthService.getSession();
+        var historyKey = session ? 'vs_orders_' + session.id : 'vs_orders_guest';
+        var orderHistory = [];
+        try { orderHistory = JSON.parse(localStorage.getItem(historyKey) || '[]'); } catch { orderHistory = []; }
+        orderHistory.unshift(order);
+        try { localStorage.setItem(historyKey, JSON.stringify(orderHistory)); } catch { /* quota */ }
+
+        localStorage.removeItem('vs_cart');
+        window.location.href = 'confirmare-comanda.html';
+      });
+    })();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Get-ChildItem \"c:\\\\Users\\\\alina\\\\OneDrive\\\\Desktop\\\\Victoria Secret\\\\style\" -Force)"
+    ]
+  }
+}

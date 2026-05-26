@@ -1,0 +1,485 @@
+﻿<html lang="ro">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Victoria's Secret</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style/style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = { theme: { extend: { colors: { clifford: "#da373d" } } } };</script>
+  </head>
+  <body>
+    <header>
+      <!-- Top banner -->
+      <div class="bg-[#f9e2e7] py-2 w-full">
+        <div class="font-extralight text-xs sm:text-sm mx-auto flex flex-col sm:flex-row justify-center items-center gap-2 sm:gap-4 text-center px-4">
+          <p>SITE-UL OFICIAL VICTORIA'S SECRET LIVRARE GRATUITĂ DE LA 269 LEI</p>
+          <a class="text-xs sm:text-sm bg-transparent hover:bg-[#e8e3e4] border-black border px-3 py-[3px] rounded-sm whitespace-nowrap" href="#">VEZI OFERTELE</a>
+        </div>
+      </div>
+
+      <!-- Brand bar -->
+      <div class="w-full bg-[#eee9ea] py-2">
+        <div class="container mx-auto px-4">
+          <div class="flex justify-between items-center">
+            <nav class="flex flex-wrap gap-2 sm:gap-4 items-center">
+              <li class="list-none border-r-2 border-gray-400 pr-2 sm:pr-6 text-xs sm:text-sm font-semibold">
+                <a href="index.html" class="nav-active">VICTORIA'S SECRET</a>
+              </li>
+              <li class="list-none border-r-2 border-gray-400 pr-2 sm:pr-6 text-xs sm:text-sm font-light">
+                <a href="pink.html" class="hover:font-semibold">PINK</a>
+              </li>
+              <li class="list-none text-xs sm:text-sm font-light">
+                <a href="vs-beauty.html" class="hover:font-semibold">BEAUTY</a>
+              </li>
+            </nav>
+            <div class="flex gap-4 items-center">
+              <button aria-label="Meniu" id="hamburger" class="sm:hidden text-xl"><i class="fa-solid fa-bars"></i></button>
+              <button id="search-toggle" aria-label="Căutare" title="Căutare"><i class="fa-solid fa-magnifying-glass text-xl sm:text-2xl cursor-pointer"></i></button>
+              <a href="login.html" id="user-nav-link" title="Contul meu"><i id="user-nav-icon" class="fa-regular fa-user text-xl sm:text-2xl cursor-pointer"></i></a>
+              <a href="cos-de-cumparaturi.html" title="Coș de cumpărături" class="relative">
+                <i class="fa-solid fa-bag-shopping text-xl sm:text-2xl cursor-pointer"></i>
+                <span class="cart-badge absolute -top-2 -right-2 bg-[#c37989] text-white text-[10px] rounded-full w-4 h-4 font-bold" style="display:none;align-items:center;justify-content:center">0</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main nav desktop -->
+      <div class="w-full border-b border-gray-200 hidden sm:block">
+        <div class="container mx-auto px-4">
+          <nav aria-label="Categorii produse">
+            <ul class="flex justify-between text-sm font-light py-3">
+              <li><a href="nou.html" class="hover:nav-active px-1 py-2">NOU</a></li>
+              <li><a href="sutiene.html" class="hover:nav-active px-1 py-2">SUTIENE</a></li>
+              <li><a href="chiloti.html" class="hover:nav-active px-1 py-2">CHILOȚI</a></li>
+              <li><a href="lenjerie.html" class="hover:nav-active px-1 py-2">LENJERIE</a></li>
+              <li><a href="pijama.html" class="hover:nav-active px-1 py-2">PIJAMA</a></li>
+              <li><a href="haine-sport.html" class="hover:nav-active px-1 py-2">HAINE SPORT</a></li>
+              <li><a href="vs-beauty.html" class="hover:nav-active px-1 py-2">BEAUTY</a></li>
+              <li><a href="accesorii.html" class="hover:nav-active px-1 py-2">ACCESORII</a></li>
+              <li><a href="swim.html" class="hover:nav-active px-1 py-2">SWIM</a></li>
+              <li><a href="vs-now.html" class="hover:nav-active px-1 py-2">VS NOW</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+
+      <!-- Mobile menu -->
+      <div id="mobile-menu" class="sm:hidden bg-white border-b border-gray-200 shadow-md">
+        <nav aria-label="Categorii produse mobile">
+          <ul class="flex flex-col text-sm font-light divide-y divide-gray-100">
+            <li><a href="nou.html" class="block px-6 py-3 hover:bg-gray-50">NOU</a></li>
+            <li><a href="sutiene.html" class="block px-6 py-3 hover:bg-gray-50">SUTIENE</a></li>
+            <li><a href="chiloti.html" class="block px-6 py-3 hover:bg-gray-50">CHILOȚI</a></li>
+            <li><a href="lenjerie.html" class="block px-6 py-3 hover:bg-gray-50">LENJERIE</a></li>
+            <li><a href="pijama.html" class="block px-6 py-3 hover:bg-gray-50">PIJAMA</a></li>
+            <li><a href="haine-sport.html" class="block px-6 py-3 hover:bg-gray-50">HAINE SPORT</a></li>
+            <li><a href="vs-beauty.html" class="block px-6 py-3 hover:bg-gray-50">BEAUTY</a></li>
+            <li><a href="accesorii.html" class="block px-6 py-3 hover:bg-gray-50">ACCESORII</a></li>
+            <li><a href="swim.html" class="block px-6 py-3 hover:bg-gray-50">SWIM</a></li>
+            <li><a href="vs-now.html" class="block px-6 py-3 hover:bg-gray-50">VS NOW</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Search overlay -->
+    <div id="search-overlay" style="display:none" class="fixed inset-0 z-50 flex-col items-center justify-start bg-white pt-20 px-4">
+      <div class="w-full max-w-2xl mx-auto">
+        <div class="flex items-center border-b-2 border-black pb-2 mb-6">
+          <i class="fa-solid fa-magnifying-glass text-gray-400 mr-3"></i>
+          <input id="search-input" type="text" placeholder="Caută produse..." class="flex-1 text-lg outline-none" autocomplete="off" />
+          <button id="search-close" class="ml-4 text-2xl text-gray-400 hover:text-black">&times;</button>
+        </div>
+        <div id="search-results" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4"></div>
+        <p id="search-empty" class="text-gray-500 text-center hidden mt-8">Niciun produs găsit.</p>
+      </div>
+    </div>
+
+    <!-- Toast notification -->
+    <div id="toast" style="display:none" class="fixed bottom-6 left-1/2 -translate-x-1/2 bg-black text-white text-sm px-6 py-3 rounded z-50 flex items-center gap-3">
+      <i class="fa-solid fa-circle-check text-green-400"></i>
+      <span id="toast-msg">Produs adăugat în coș!</span>
+      <a href="cos-de-cumparaturi.html" class="underline whitespace-nowrap">Vezi coșul</a>
+    </div>
+
+    <main class="w-full mx-auto">
+      <div class="container mx-auto px-4">
+        <!-- Title + search -->
+        <div class="flex justify-center items-center py-8 sm:py-12">
+          <h1 class="text-3xl sm:text-5xl font-light text-center">Victoria's Secret</h1>
+        </div>
+      </div>
+
+      <!-- Hero image 1 -->
+      <div class="container w-full mx-auto px-4">
+        <a href="#"><img class="w-full" src="assets/image/bg-img-1.avif" alt="Promotie Victoria's Secret" /></a>
+      </div>
+
+      <!-- Hero image 2 + product grid 1 -->
+      <div class="container w-full mx-auto px-4 pt-5">
+        <a href="#"><img class="w-full" src="assets/image/bg-img-2.avif" alt="Body by Victoria" /></a>
+
+        <div id="product-grid-1" class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4 sm:gap-5 py-7">
+          <div class="product-card flex flex-col" data-id="idx-sutien-1" data-name="Body by Victoria" data-subtitle="Sutien Demi neted cu căpușeală subțire" data-price="260" data-image="assets/icon/sutiene/be4321f3558805f0a29d93b6b5e201864bc5b965_42fd.avif" data-color="Bej">
+            <img class="w-full cursor-pointer" src="assets/icon/sutiene/be4321f3558805f0a29d93b6b5e201864bc5b965_42fd.avif" alt="Body by Victoria sutien" />
+            <div class="flex flex-col p-2 sm:p-3 flex-1">
+              <p class="text-sm sm:text-base font-medium">Body by Victoria</p>
+              <p class="text-xs sm:text-sm text-gray-600 mb-1">Sutien Demi neted cu căpușeală subțire</p>
+              <span class="text-base sm:text-lg font-semibold">260.00 lei</span>
+              <div class="flex gap-1 my-2 size-group">
+                <button class="size-btn border border-gray-300 text-xs px-2 py-1 hover:border-black transition">XS</button>
+                <button class="size-btn border border-gray-300 text-xs px-2 py-1 hover:border-black transition">S</button>
+                <button class="size-btn border border-gray-300 text-xs px-2 py-1 hover:border-black transition">M</button>
+                <button class="size-btn border border-gray-300 text-xs px-2 py-1 hover:border-black transition">L</button>
+                <button class="size-btn border border-gray-300 text-xs px-2 py-1 hover:border-black transition">XL</button>
+              </div>
+              <button class="add-to-cart mt-auto bg-black text-white text-xs py-2 hover:bg-gray-800 transition w-full">ADAUGĂ ÎN COȘ</button>
+            </div>
+          </div>
+          <div class="product-card flex flex-col" data-id="idx-sutien-2" data-name="Body by Victoria" data-subtitle="Sutien Demi neted cu căpușeală subțire" data-price="260" data-image="assets/icon/sutiene/UJpye_1123744928P7_OM_F.avif" data-color="Negru">
+            <img class="w-full cursor-pointer" src="assets/icon/sutiene/UJpye_1123744928P7_OM_F.avif" alt="Body by Victoria sutien" />
+            <div class="flex flex-col p-2 sm:p-3 flex-1">
+              <p class="text-sm sm:text-base font-medium">Body by Victoria</p>
+              <p class="text-xs sm:text-sm text-gray-600 mb-1">Sutien Demi neted cu căpușeală subțire</p>
+              <span class="text-base sm:text-lg font-semibold">260.00 lei</span>
+              <div class="flex gap-1 my-2 size-group">
+                <button class="size-btn border border-gray-300 text-xs px-2 py-1 hover:border-black transition">XS</button>
+                <button class="size-btn border border-gray-300 text-xs px-2 py-1 hover:border-black transition">S</button>
+                <button class="size-btn border border-gray-300 text-xs px-2 py-1 hover:border-black transition">M</button>
+                <button class="size-btn border border-gray-300 text-xs px-2 py-1 hover:border-black transition">L</button>
+                <button class="size-btn border border-gray-300 text-xs px-2 py-1 hover:border-black transition">XL</button>
+              </div>
+              <button class="add-to-cart mt-auto bg-black text-white text-xs py-2 hover:bg-gray-800 transition w-full">ADAUGĂ ÎN COȘ</button>
+            </div>
+          </div>
+          <div class="product-card flex flex-col" data-id="idx-sutien-3" data-name="Body by Victoria" data-subtitle="Sutien Demi neted cu căpușeală subțire" data-price="260" data-image="assets/icon/sutiene/13da4d200fe204be9ceca0d2547c32458ddc460f_ad91.avif" data-color="Roz">
+            <img class="w-full cursor-pointer" src="assets/icon/sutiene/13da4d200fe204be9ceca0d2547c32458ddc460f_ad91.avif" alt="Body by Victoria sutien" />
+            <div class="flex flex-col p-2 sm:p-3 flex-1">
+              <p class="text-sm sm:text-base font-medium">Body by Victoria</p>
+              <p class="text-xs sm:text-sm text-gray-600 mb-1">Sutien Demi neted cu căpușeală subțire</p>
+              <span class="text-base sm:text-lg font-semibold">260.00 lei</span>
+              <div class="flex gap-1 my-2 size-group">
+                <button class="size-btn border border-gray-300 text-xs px-2 py-1 hover:border-black transition">XS</button>
+                <button class="size-btn border border-gray-300 text-xs px-2 py-1 hover:border-black transition">S</button>
+                <button class="size-btn border border-gray-300 text-xs px-2 py-1 hover:border-black transition">M</button>
+                <button class="size-btn border border-gray-300 text-xs px-2 py-1 hover:border-black transition">L</button>
+                <button class="size-btn border border-gray-300 text-xs px-2 py-1 hover:border-black transition">XL</button>
+              </div>
+              <button class="add-to-cart mt-auto bg-black text-white text-xs py-2 hover:bg-gray-800 transition w-full">ADAUGĂ ÎN COȘ</button>
+            </div>
+          </div>
+          <div class="product-card flex flex-col" data-id="idx-sutien-4" data-name="Body by Victoria" data-subtitle="Sutien Demi neted cu căpușeală subțire" data-price="260" data-image="assets/icon/sutiene/body-by-victoria.avif" data-color="Alb">
+            <img class="w-full cursor-pointer" src="assets/icon/sutiene/body-by-victoria.avif" alt="Body by Victoria sutien" />
+            <div class="flex flex-col p-2 sm:p-3 flex-1">
+              <p class="text-sm sm:text-base font-medium">Body by Victoria</p>
+              <p class="text-xs sm:text-sm text-gray-600 mb-1">Sutien Demi neted cu căpușeală subțire</p>
+              <span class="text-base sm:text-lg font-semibold">260.00 lei</span>
+              <div class="flex gap-1 my-2 size-group">
+                <button class="size-btn border border-gray-300 text-xs px-2 py-1 hover:border-black transition">XS</button>
+                <button class="size-btn border border-gray-300 text-xs px-2 py-1 hover:border-black transition">S</button>
+                <button class="size-btn border border-gray-300 text-xs px-2 py-1 hover:border-black transition">M</button>
+                <button class="size-btn border border-gray-300 text-xs px-2 py-1 hover:border-black transition">L</button>
+                <button class="size-btn border border-gray-300 text-xs px-2 py-1 hover:border-black transition">XL</button>
+              </div>
+              <button class="add-to-cart mt-auto bg-black text-white text-xs py-2 hover:bg-gray-800 transition w-full">ADAUGĂ ÎN COȘ</button>
+            </div>
+          </div>
+          <div class="product-card flex flex-col" data-id="idx-sutien-5" data-name="Body by Victoria" data-subtitle="Sutien Demi neted cu căpușeală subțire" data-price="260" data-image="assets/icon/sutiene/SuOsr_1123744654A2_OM_F.avif" data-color="Bej">
+            <img class="w-full cursor-pointer" src="assets/icon/sutiene/SuOsr_1123744654A2_OM_F.avif" alt="Body by Victoria sutien" />
+            <div class="flex flex-col p-2 sm:p-3 flex-1">
+              <p class="text-sm sm:text-base font-medium">Body by Victoria</p>
+              <p class="text-xs sm:text-sm text-gray-600 mb-1">Sutien Demi neted cu căpușeală subțire</p>
+              <span class="text-base sm:text-lg font-semibold">260.00 lei</span>
+              <div class="flex gap-1 my-2 size-group">
+                <button class="size-btn border border-gray-300 text-xs px-2 py-1 hover:border-black transition">XS</button>
+                <button class="size-btn border border-gray-300 text-xs px-2 py-1 hover:border-black transition">S</button>
+                <button class="size-btn border border-gray-300 text-xs px-2 py-1 hover:border-black transition">M</button>
+                <button class="size-btn border border-gray-300 text-xs px-2 py-1 hover:border-black transition">L</button>
+                <button class="size-btn border border-gray-300 text-xs px-2 py-1 hover:border-black transition">XL</button>
+              </div>
+              <button class="add-to-cart mt-auto bg-black text-white text-xs py-2 hover:bg-gray-800 transition w-full">ADAUGĂ ÎN COȘ</button>
+            </div>
+          </div>
+        </div>
+
+        <a href="#"><img class="w-full pb-5" src="assets/image/bg-img-3.avif" alt="" /></a>
+        <a href="#"><img class="w-full pb-5" src="assets/image/bg-img-4.avif" alt="" /></a>
+        <a href="#"><img class="w-full pb-5" src="assets/image/bg-img-5.avif" alt="" /></a>
+
+        <!-- Product grid 2 -->
+        <div id="product-grid-2" class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4 sm:gap-5 py-7">
+          <div class="product-card flex flex-col" data-id="idx-vs-1" data-name="Very Sexy" data-subtitle="Sutien cu Push-Up Icon" data-price="310" data-image="assets/icon/sutiene/be4321f3558805f0a29d93b6b5e201864bc5b965_42fd.avif" data-color="Negru">
+            <img class="w-full cursor-pointer" src="assets/icon/sutiene/be4321f3558805f0a29d93b6b5e201864bc5b965_42fd.avif" alt="Very Sexy sutien" />
+            <div class="flex flex-col p-2 sm:p-3 flex-1">
+              <p class="text-sm sm:text-base font-medium">Very Sexy</p>
+              <p class="text-xs sm:text-sm text-gray-600 mb-1">Sutien cu Push-Up Icon</p>
+              <span class="text-base sm:text-lg font-semibold">310.00 lei</span>
+              <div class="flex gap-1 my-2 size-group">
+                <button class="size-btn border border-gray-300 text-xs px-2 py-1 hover:border-black transition">XS</button>
+                <button class="size-btn border border-gray-300 text-xs px-2 py-1 hover:border-black transition">S</button>
+                <button class="size-btn border border-gray-300 text-xs px-2 py-1 hover:border-black transition">M</button>
+                <button class="size-btn border border-gray-300 text-xs px-2 py-1 hover:border-black transition">L</button>
+                <button class="size-btn border border-gray-300 text-xs px-2 py-1 hover:border-black transition">XL</button>
+              </div>
+              <button class="add-to-cart mt-auto bg-black text-white text-xs py-2 hover:bg-gray-800 transition w-full">ADAUGĂ ÎN COȘ</button>
+            </div>
+          </div>
+          <div class="product-card flex flex-col" data-id="idx-vs-2" data-name="Very Sexy" data-subtitle="Chiloti tanga cu curele reglabile din dantelă Icon" data-price="85" data-image="assets/icon/sutiene/UJpye_1123744928P7_OM_F.avif" data-color="Negru" data-promo="Cumpără 3 pentru 200 lei">
+            <img class="w-full cursor-pointer" src="assets/icon/sutiene/UJpye_1123744928P7_OM_F.avif" alt="Very Sexy chiloti" />
+            <div class="flex flex-col p-2 sm:p-3 flex-1">
+              <p class="text-sm sm:text-base font-medium">Very Sexy</p>
+              <p class="text-xs sm:text-sm text-gray-600 mb-1">Chiloti tanga cu curele reglabile din dantelă Icon</p>
+              <span class="text-base sm:text-lg font-semibold">85.00 lei</span>
+              <span class="text-red-400 text-xs mt-1">Cumpără 3 pentru 200 lei</span>
+              <div class="flex gap-1 my-2 size-group">
+                <button class="size-btn border border-gray-300 text-xs px-2 py-1 hover:border-black transition">XS</button>
+                <button class="size-btn border border-gray-300 text-xs px-2 py-1 hover:border-black transition">S</button>
+                <button class="size-btn border border-gray-300 text-xs px-2 py-1 hover:border-black transition">M</button>
+                <button class="size-btn border border-gray-300 text-xs px-2 py-1 hover:border-black transition">L</button>
+                <button class="size-btn border border-gray-300 text-xs px-2 py-1 hover:border-black transition">XL</button>
+              </div>
+              <button class="add-to-cart mt-auto bg-black text-white text-xs py-2 hover:bg-gray-800 transition w-full">ADAUGĂ ÎN COȘ</button>
+            </div>
+          </div>
+          <div class="product-card flex flex-col" data-id="idx-vs-3" data-name="Very Sexy" data-subtitle="Sutien cu Push-Up Icon" data-price="310" data-image="assets/icon/sutiene/USsAH_1123744666H6_OM_F_AMZ.avif" data-color="Roz">
+            <img class="w-full cursor-pointer" src="assets/icon/sutiene/USsAH_1123744666H6_OM_F_AMZ.avif" alt="Very Sexy sutien" />
+            <div class="flex flex-col p-2 sm:p-3 flex-1">
+              <p class="text-sm sm:text-base font-medium">Very Sexy</p>
+              <p class="text-xs sm:text-sm text-gray-600 mb-1">Sutien cu Push-Up Icon</p>
+              <span class="text-base sm:text-lg font-semibold">310.00 lei</span>
+              <div class="flex gap-1 my-2 size-group">
+                <button class="size-btn border border-gray-300 text-xs px-2 py-1 hover:border-black transition">XS</button>
+                <button class="size-btn border border-gray-300 text-xs px-2 py-1 hover:border-black transition">S</button>
+                <button class="size-btn border border-gray-300 text-xs px-2 py-1 hover:border-black transition">M</button>
+                <button class="size-btn border border-gray-300 text-xs px-2 py-1 hover:border-black transition">L</button>
+                <button class="size-btn border border-gray-300 text-xs px-2 py-1 hover:border-black transition">XL</button>
+              </div>
+              <button class="add-to-cart mt-auto bg-black text-white text-xs py-2 hover:bg-gray-800 transition w-full">ADAUGĂ ÎN COȘ</button>
+            </div>
+          </div>
+          <div class="product-card flex flex-col" data-id="idx-vs-4" data-name="Very Sexy" data-subtitle="Chiloti tanga cu curele reglabile din dantelă Icon" data-price="85" data-image="assets/icon/sutiene/13da4d200fe204be9ceca0d2547c32458ddc460f_ad91.avif" data-color="Roz" data-promo="Cumpără 3 pentru 200 lei">
+            <img class="w-full cursor-pointer" src="assets/icon/sutiene/13da4d200fe204be9ceca0d2547c32458ddc460f_ad91.avif" alt="Very Sexy chiloti" />
+            <div class="flex flex-col p-2 sm:p-3 flex-1">
+              <p class="text-sm sm:text-base font-medium">Very Sexy</p>
+              <p class="text-xs sm:text-sm text-gray-600 mb-1">Chiloti tanga cu curele reglabile din dantelă Icon</p>
+              <span class="text-base sm:text-lg font-semibold">85.00 lei</span>
+              <span class="text-red-400 text-xs mt-1">Cumpără 3 pentru 200 lei</span>
+              <div class="flex gap-1 my-2 size-group">
+                <button class="size-btn border border-gray-300 text-xs px-2 py-1 hover:border-black transition">XS</button>
+                <button class="size-btn border border-gray-300 text-xs px-2 py-1 hover:border-black transition">S</button>
+                <button class="size-btn border border-gray-300 text-xs px-2 py-1 hover:border-black transition">M</button>
+                <button class="size-btn border border-gray-300 text-xs px-2 py-1 hover:border-black transition">L</button>
+                <button class="size-btn border border-gray-300 text-xs px-2 py-1 hover:border-black transition">XL</button>
+              </div>
+              <button class="add-to-cart mt-auto bg-black text-white text-xs py-2 hover:bg-gray-800 transition w-full">ADAUGĂ ÎN COȘ</button>
+            </div>
+          </div>
+          <div class="product-card flex flex-col" data-id="idx-vs-5" data-name="Very Sexy" data-subtitle="Sutien cu Push-Up Icon" data-price="310" data-image="assets/icon/sutiene/body-by-victoria.avif" data-color="Alb">
+            <img class="w-full cursor-pointer" src="assets/icon/sutiene/body-by-victoria.avif" alt="Very Sexy sutien" />
+            <div class="flex flex-col p-2 sm:p-3 flex-1">
+              <p class="text-sm sm:text-base font-medium">Very Sexy</p>
+              <p class="text-xs sm:text-sm text-gray-600 mb-1">Sutien cu Push-Up Icon</p>
+              <span class="text-base sm:text-lg font-semibold">310.00 lei</span>
+              <div class="flex gap-1 my-2 size-group">
+                <button class="size-btn border border-gray-300 text-xs px-2 py-1 hover:border-black transition">XS</button>
+                <button class="size-btn border border-gray-300 text-xs px-2 py-1 hover:border-black transition">S</button>
+                <button class="size-btn border border-gray-300 text-xs px-2 py-1 hover:border-black transition">M</button>
+                <button class="size-btn border border-gray-300 text-xs px-2 py-1 hover:border-black transition">L</button>
+                <button class="size-btn border border-gray-300 text-xs px-2 py-1 hover:border-black transition">XL</button>
+              </div>
+              <button class="add-to-cart mt-auto bg-black text-white text-xs py-2 hover:bg-gray-800 transition w-full">ADAUGĂ ÎN COȘ</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="pb-5"><img class="w-full" src="assets/image/bg-6.avif" alt="" /></div>
+        <div class="pb-8 sm:pb-14"><img class="w-full" src="assets/image/bg-7.avif" alt="" /></div>
+
+        <!-- Product grid 3 -->
+        <div id="product-grid-3" class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4 sm:gap-5 py-7">
+          <div class="product-card flex flex-col" data-id="idx-creme-1" data-name="VS Fantasies" data-subtitle="Cremă de corp parfumată Velvet Petals" data-price="120" data-image="assets/icon/creme de corp/G0u9Y_112283084840_OM_F_2048x2048.avif" data-color="">
+            <img class="w-full cursor-pointer" src="assets/icon/creme de corp/G0u9Y_112283084840_OM_F_2048x2048.avif" alt="Crema de corp" />
+            <div class="flex flex-col p-2 sm:p-3 flex-1">
+              <p class="text-sm sm:text-base font-medium">VS Fantasies</p>
+              <p class="text-xs sm:text-sm text-gray-600 mb-1">Cremă de corp parfumată Velvet Petals</p>
+              <span class="text-base sm:text-lg font-semibold">120.00 lei</span>
+              <div class="flex gap-1 my-2 size-group">
+                <button class="size-btn border border-gray-300 text-xs px-2 py-1 hover:border-black transition">236 ml</button>
+                <button class="size-btn border border-gray-300 text-xs px-2 py-1 hover:border-black transition">500 ml</button>
+              </div>
+              <button class="add-to-cart mt-auto bg-black text-white text-xs py-2 hover:bg-gray-800 transition w-full">ADAUGĂ ÎN COȘ</button>
+            </div>
+          </div>
+          <div class="product-card flex flex-col" data-id="idx-creme-2" data-name="VS Fantasies" data-subtitle="Cremă de corp parfumată Bare Vanilla" data-price="120" data-image="assets/icon/creme de corp/rNmnX_112283094840_OM_F_2048x2048.avif" data-color="">
+            <img class="w-full cursor-pointer" src="assets/icon/creme de corp/rNmnX_112283094840_OM_F_2048x2048.avif" alt="Crema de corp" />
+            <div class="flex flex-col p-2 sm:p-3 flex-1">
+              <p class="text-sm sm:text-base font-medium">VS Fantasies</p>
+              <p class="text-xs sm:text-sm text-gray-600 mb-1">Cremă de corp parfumată Bare Vanilla</p>
+              <span class="text-base sm:text-lg font-semibold">120.00 lei</span>
+              <div class="flex gap-1 my-2 size-group">
+                <button class="size-btn border border-gray-300 text-xs px-2 py-1 hover:border-black transition">236 ml</button>
+                <button class="size-btn border border-gray-300 text-xs px-2 py-1 hover:border-black transition">500 ml</button>
+              </div>
+              <button class="add-to-cart mt-auto bg-black text-white text-xs py-2 hover:bg-gray-800 transition w-full">ADAUGĂ ÎN COȘ</button>
+            </div>
+          </div>
+          <div class="product-card flex flex-col" data-id="idx-creme-3" data-name="VS Fantasies" data-subtitle="Cremă de corp parfumată Love Spell" data-price="120" data-image="assets/icon/creme de corp/HKTeo_112283084833_OM_F_2048x2048.avif" data-color="">
+            <img class="w-full cursor-pointer" src="assets/icon/creme de corp/HKTeo_112283084833_OM_F_2048x2048.avif" alt="Crema de corp" />
+            <div class="flex flex-col p-2 sm:p-3 flex-1">
+              <p class="text-sm sm:text-base font-medium">VS Fantasies</p>
+              <p class="text-xs sm:text-sm text-gray-600 mb-1">Cremă de corp parfumată Love Spell</p>
+              <span class="text-base sm:text-lg font-semibold">120.00 lei</span>
+              <div class="flex gap-1 my-2 size-group">
+                <button class="size-btn border border-gray-300 text-xs px-2 py-1 hover:border-black transition">236 ml</button>
+                <button class="size-btn border border-gray-300 text-xs px-2 py-1 hover:border-black transition">500 ml</button>
+              </div>
+              <button class="add-to-cart mt-auto bg-black text-white text-xs py-2 hover:bg-gray-800 transition w-full">ADAUGĂ ÎN COȘ</button>
+            </div>
+          </div>
+          <div class="product-card flex flex-col" data-id="idx-creme-4" data-name="VS Fantasies" data-subtitle="Cremă de corp parfumată Secret Charm" data-price="120" data-image="assets/icon/creme de corp/AinzB_112283094833_OM_F_2048x2048.avif" data-color="">
+            <img class="w-full cursor-pointer" src="assets/icon/creme de corp/AinzB_112283094833_OM_F_2048x2048.avif" alt="Crema de corp" />
+            <div class="flex flex-col p-2 sm:p-3 flex-1">
+              <p class="text-sm sm:text-base font-medium">VS Fantasies</p>
+              <p class="text-xs sm:text-sm text-gray-600 mb-1">Cremă de corp parfumată Secret Charm</p>
+              <span class="text-base sm:text-lg font-semibold">120.00 lei</span>
+              <div class="flex gap-1 my-2 size-group">
+                <button class="size-btn border border-gray-300 text-xs px-2 py-1 hover:border-black transition">236 ml</button>
+                <button class="size-btn border border-gray-300 text-xs px-2 py-1 hover:border-black transition">500 ml</button>
+              </div>
+              <button class="add-to-cart mt-auto bg-black text-white text-xs py-2 hover:bg-gray-800 transition w-full">ADAUGĂ ÎN COȘ</button>
+            </div>
+          </div>
+          <div class="product-card flex flex-col" data-id="idx-parfum-1" data-name="Victoria's Secret" data-subtitle="Parfum Bombshell" data-price="350" data-image="assets/icon/creme de corp/parfum.avif" data-color="">
+            <img class="w-full cursor-pointer" src="assets/icon/creme de corp/parfum.avif" alt="Parfum" />
+            <div class="flex flex-col p-2 sm:p-3 flex-1">
+              <p class="text-sm sm:text-base font-medium">Victoria's Secret</p>
+              <p class="text-xs sm:text-sm text-gray-600 mb-1">Parfum Bombshell</p>
+              <span class="text-base sm:text-lg font-semibold">350.00 lei</span>
+              <div class="flex gap-1 my-2 size-group">
+                <button class="size-btn border border-gray-300 text-xs px-2 py-1 hover:border-black transition">50 ml</button>
+                <button class="size-btn border border-gray-300 text-xs px-2 py-1 hover:border-black transition">100 ml</button>
+              </div>
+              <button class="add-to-cart mt-auto bg-black text-white text-xs py-2 hover:bg-gray-800 transition w-full">ADAUGĂ ÎN COȘ</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Social section -->
+        <div class="pt-16 sm:pt-28 pb-10 flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-5 text-center px-4">
+          <h2 class="text-lg sm:text-2xl font-semibold">URMĂREȘTE POVESTEA NOASTRĂ</h2>
+          <a class="text-[#af5071] text-lg sm:text-2xl font-semibold border-b-2 border-[#af5071]" href="#">@VICTORIASSECRETROMANIA</a>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 2xl:grid-cols-4 gap-4 sm:gap-5 pb-10">
+          <a href="#"><img class="w-full" src="assets/icon/sutiene/sutien-1.avif" alt="" /></a>
+          <a href="#"><img class="w-full" src="assets/icon/accesorii/24XtU_1125690554A2_OM_F.jpg.jpeg" alt="" /></a>
+          <a href="#"><img class="w-full" src="assets/icon/sutiene/sutien-2.avif" alt="" /></a>
+          <a href="#"><img class="w-full" src="assets/icon/accesorii/2N1VP_1125612154A2_OM_F.jpg.jpeg" alt="" /></a>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-100 w-full mt-10">
+      <div class="container mx-auto flex flex-col lg:flex-row gap-10 lg:gap-[150px] px-4 pt-10 sm:pt-14">
+        <div class="flex flex-col w-full lg:max-w-[500px]">
+          <p class="text-lg font-semibold pb-4">ABONEAZĂ-TE LA NEWSLETTER PENTRU A FI LA CURENT</p>
+          <form class="newsletter-form flex flex-col gap-0">
+            <input class="bg-white py-3 px-3 border border-gray-200" placeholder="Introdu adresa de email" type="email" aria-label="Adresa de email newsletter" />
+            <button type="submit" class="bg-black text-white text-xs py-3 px-6 hover:bg-gray-800 transition mt-2 tracking-wider w-full">ABONEAZĂ-TE</button>
+            <p class="newsletter-msg text-xs mt-2"></p>
+          </form>
+          <span class="pt-5 text-sm">Sunt de acord cu prelucrarea datelor mele în scopul trimiterii de mesaje electronice care conțin informații comerciale. Consimțământul poate fi retras în orice moment prin utilizarea opțiunii de renunțare într-un e-mail. Mai multe informații în </span><a class="text-[#c37989] hover:text-[#ddaeb8] pb-4 text-sm" href="politica-de-confidentialitate.html">Politica de confidențialitate.</a>
+          <span class="pb-10 sm:pb-16 text-sm pt-3">Datele dumneavoastră cu caracter personal vor fi utilizate pentru vizitele pe site-ul nostru web, pentru a gestiona accesul la contul dumneavoastră și în alte scopuri, după cum se menționează în <a class="text-[#c37989] hover:text-[#ddaeb8] text-sm" href="politica-de-confidentialitate.html">politica noastră de confidențialitate.</a></span>
+          <img class="w-full max-w-[400px] pb-7" src="assets/icon/VSFA_220818_-_ANPC_Buttons_1.avif" alt="ANPC" />
+          <img class="w-full max-w-[400px] pb-11" src="assets/icon/VSFA_220818_-_ANPC_Buttons_2.avif" alt="ANPC" />
+        </div>
+        <div class="w-full pb-10">
+          <nav class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <ul class="flex flex-col gap-4 text-sm">
+              <li class="text-black font-semibold">AJUTOR</li>
+              <li><a href="faq.html" class="hover:text-[#af5071]">FAQ</a></li>
+              <li><a href="contact.html" class="hover:text-[#af5071]">Contactează-ne</a></li>
+            </ul>
+            <ul class="flex flex-col gap-4 text-sm">
+              <li class="text-black font-semibold">INFORMAȚII</li>
+              <li><a href="livrare-plata.html" class="hover:text-[#af5071]">Livrare și plată</a></li>
+              <li><a href="returnari.html" class="hover:text-[#af5071]">Returnări și reclamații</a></li>
+              <li><a href="politica-de-confidentialitate.html" class="hover:text-[#af5071]">Politică de confidențialitate</a></li>
+              <li><a href="termeni-conditii.html" class="hover:text-[#af5071]">Termeni și Condiții</a></li>
+            </ul>
+            <ul class="flex flex-col gap-4 text-sm">
+              <li class="text-black font-semibold">ASISTENȚĂ CLIENȚI</li>
+              <li><a href="contul-meu.html" class="hover:text-[#af5071]">Contul meu</a></li>
+              <li><a href="lista-de-dorinte.html" class="hover:text-[#af5071]">Lista De Dorințe</a></li>
+              <li><a href="termeni-conditii.html" class="hover:text-[#af5071]">Termenii Și Condițiile</a></li>
+              <li><a href="faq.html" class="hover:text-[#af5071]">Reguli De Promovare</a></li>
+              <li><a href="returnari.html" class="hover:text-[#af5071]">Returnări Și Reclamații</a></li>
+              <li><a href="politica-de-confidentialitate.html" class="hover:text-[#af5071]">Politica De Confidențialitate</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </footer>
+    <div class="w-full py-5 border-t border-gray-200">
+      <div class="container mx-auto px-4">
+        <span class="text-sm text-gray-500">© 2024 Victoria's Secret. All Rights Reserved.</span>
+      </div>
+    </div>
+
+    <!-- Newsletter Popup -->
+    <div id="newsletter-popup" class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 px-4">
+      <div class="bg-white relative max-w-md w-full px-8 py-10 text-center shadow-xl">
+        <button id="close-popup" class="absolute top-3 right-4 text-black text-xl font-light leading-none">&times;</button>
+        <p class="font-serif text-4xl sm:text-5xl font-bold tracking-wide mb-4">VICTORIA'S SECRET</p>
+        <h2 class="text-xl sm:text-2xl font-light mb-3">Nu te opri să strălucești</h2>
+        <p class="text-sm sm:text-base mb-6">
+          Abonează-te la <strong>newsletter-ul</strong> nostru,<br />
+          Și primește o <strong>reducere de 15%</strong> la următoarea ta achiziție<br />
+          din magazinul online!
+        </p>
+        <div class="flex flex-col gap-3 text-left mb-5">
+          <div>
+            <label class="text-xs text-gray-600 block mb-1">Prenume</label>
+            <input id="popup-name" type="text" class="w-full border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:border-gray-500" />
+          </div>
+          <div>
+            <label class="text-xs text-gray-600 block mb-1">E-mail</label>
+            <input id="popup-email" type="email" class="w-full border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:border-gray-500" />
+          </div>
+        </div>
+        <button id="popup-submit" class="bg-[#f0c4cc] hover:bg-[#e8aab5] text-black text-sm px-10 py-3 transition mb-5">Înscrie-te</button>
+        <p class="text-[10px] text-gray-500 leading-relaxed">
+          Administratorul datelor tale cu caracter personal este Alshaya Poland Sp. z o.o., cu sediul social la al. Armii Ludowej 26, 00-609 Varșovia. Puteți contacta administratorul prin e-mail: <a href="mailto:dane.osobowe@alshaya.com" class="underline">dane.osobowe@alshaya.com</a>. Datele dvs. vor fi prelucrate în scopul trimiterii de mesaje electronice care conțin informații comerciale. Furnizarea datelor cu caracter personal este voluntară, dar este necesară pentru trimiterea mesajelor electronice. Vă puteți retrage consimțământul în orice moment prin utilizarea opțiunii de retragere din e-mail. Pentru mai multe informații, vă rugăm să consultați <a href="politica-de-confidentialitate.html" class="underline">Politica de confidențialitate</a>.
+        </p>
+      </div>
+    </div>
+
+    <script src="js/cart.service.js"></script>
+    <script src="js/auth.service.js"></script>
+    <script src="js/product-page.service.js"></script><script src="js/wishlist.service.js"></script>
+    <script>
+      // Newsletter popup
+      (function () {
+        var popup = document.getElementById('newsletter-popup');
+        if (!popup) return;
+        function closePopup() { popup.style.display = 'none'; }
+        document.getElementById('close-popup').addEventListener('click', closePopup);
+        popup.addEventListener('click', function (e) { if (e.target === popup) closePopup(); });
+        document.getElementById('popup-submit').addEventListener('click', function () {
+          var name  = document.getElementById('popup-name').value.trim();
+          var email = document.getElementById('popup-email').value.trim();
+          if (!email) { document.getElementById('popup-email').focus(); return; }
+          var params = new URLSearchParams();
+          if (name) params.set('name', name);
+          params.set('email', email);
+          window.location.href = 'inregistrare.html?' + params.toString();
+        });
+      })();
+    </script>
+  </body>
+</html>
+
